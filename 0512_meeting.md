@@ -3,6 +3,7 @@
 - 反应数据输入：Sequence or Graph?
     - Sequence 直接基于 Reaction SMILES
     - Graph 用一个包含反应物/产物的大图
+    - 最简单保险的option - 分子指纹ECFP
 
 - 负例生成
     - 更改产物结构
