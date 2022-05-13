@@ -1,0 +1,3 @@
+# Baseline Transformer
+
+本文件夹中pt文件是使用MIT-USPTO数据集训练的模型，测试时采用Molecular Transformer原Github中采用的设置，将model参数改为此文件所在路径即可
