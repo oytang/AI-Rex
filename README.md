@@ -1,5 +1,9 @@
 # ai4science-chemistry
 
+### [0516 导师交流会议录像链接 (44M)](https://uchicagoedu-my.sharepoint.com/:v:/g/personal/yifengt_uchicago_edu/EWXOFShl9sdMssk4ZDoS5yoBiktqLY_4DRT-clx-qnn1UA?e=xtajvT)
+
+注：通过录像提取的音频已经push在git的根目录 `0516_chemistry_mentor_meeting.mp3` 所以除非需要看某个时候讲话人具体是谁 否则音频就够用了
+
 ## 挑战题 #3
 
 使用AI 技术预测反应可行性。
