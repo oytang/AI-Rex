@@ -1,1 +1,10 @@
 1976_Sep2016_USPTOgrants_smiles.7z
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook
+.ipynb_checkpoints
