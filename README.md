@@ -1,5 +1,12 @@
 # ai4science-chemistry
 
+## 重要资源
+
+- [IBM MolecularTransformer](https://github.com/pschwllr/MolecularTransformer) 根据反应物预测产物、置信度
+- [区位选择性预测](https://github.com/yanfeiguan/reactivity_predictions_substitution)
+- [qmdesc](https://pypi.org/project/qmdesc/) 用以计算量子化学描述符 可以直接pip
+- [USPTO-MIT](https://github.com/wengong-jin/nips17-rexgen) 在Lowe 2012的原版USPTO数据集上经过清洗得到的有效性更强的数据集
+
 ### [0516 导师交流会议录像链接 (44M)](https://uchicagoedu-my.sharepoint.com/:v:/g/personal/yifengt_uchicago_edu/EWXOFShl9sdMssk4ZDoS5yoBiktqLY_4DRT-clx-qnn1UA?e=xtajvT)
 
 注：通过录像提取的音频已经push在git的根目录 `0516_chemistry_mentor_meeting.mp3` 所以除非需要看某个时候讲话人具体是谁 否则音频就够用了
