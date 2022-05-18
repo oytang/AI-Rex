@@ -6,6 +6,7 @@
 - [区位选择性预测](https://github.com/yanfeiguan/reactivity_predictions_substitution)
 - [qmdesc](https://pypi.org/project/qmdesc/) 用以计算量子化学描述符 可以直接pip
 - [USPTO-MIT](https://github.com/wengong-jin/nips17-rexgen) 在Lowe 2012的原版USPTO数据集上经过清洗得到的有效性更强的数据集
+- [导师资源分享飞书整理](https://chemical-ai.feishu.cn/docs/doccn09YiI4VCFbUewjti5fIWod) 包含工具、数据、模型三个方面 但是不只针对于第三题 所以看的时候注意甄别 其中大部分有用的我们应该已经入手了
 
 ### [0516 导师交流会议录像链接 (44M)](https://uchicagoedu-my.sharepoint.com/:v:/g/personal/yifengt_uchicago_edu/EWXOFShl9sdMssk4ZDoS5yoBiktqLY_4DRT-clx-qnn1UA?e=xtajvT)
 
