@@ -1,5 +1,13 @@
 ## A package to compute the Reactivity-Related bond/atom-wise Descriptors (RRD).
 
+### TODO list
+- [ ] Buried Volume
+- [ ] Sterimol2Vec
+- [ ] Vol2Vec
+- [ ] Sterimol parameters
+- [ ] Frontier orbital energy
+
+
 ### List of descriptors in our RRD package
 
 | Descriptor | Description                    | Atom/Bond | Ref.  | Package                                              |
@@ -36,3 +44,4 @@
 - [4]. Miller and Savchik, JACS 101(24) 7206-7213, 1979.
 - [5]. Cao, Chenzhong, and Li Liu. "Topological steric effect index and its application." Journal of chemical information and computer sciences 44.2 (2004): 678-687.
 - [6]. St John, Peter C., et al. "Prediction of organic homolytic bond dissociation enthalpies at near chemical accuracy with sub-second computational cost." Nature communications 11.1 (2020): 1-12.
+
