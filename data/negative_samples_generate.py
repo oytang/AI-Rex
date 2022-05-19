@@ -1,31 +1,25 @@
 # Basic workflow credit to qianlong's script
-# The codes are comestically decorated here
+# The codes are comestically decorated
 # with some necessary bug fix
-
-import pandas as pd
-import rdchiral.main as rdc
-from rdkit import Chem
-from rdkit.Chem import rdChemReactions
-from tqdm import tqdm, trange
-
-from falsify_data import removemap, clear_atom_map
 
 
 def reverse_temp(temp):
     """
-    Convert retro template to forward template
-    This was re-implemented for
-    (1) handle the exception where there are more than one molecule as product
-    (2) better readability
+    Convert retro template to forward template;
+    This was re-implemented, for
+    (1) handling the exception where there are more than one molecule as product;
+    (2) better readability;
+    (3) better compatibility with `rdc.rdchiralRunText`
     """
     pt, rts = temp.split(">>")
-
     return rts.replace(').(', '.') + '>>' + pt.replace(').(', '.')
 
 
 def rxn2rtpt(rxn_smi):
     """
     Convert reaction SMILES into reactants and products
+    in a way that is compatible with `rdc.rdchiralRunText`
+    and not discarding meaningful data
     """
     # for normal reactions
     if rxn_smi.count('>>') == 1:
