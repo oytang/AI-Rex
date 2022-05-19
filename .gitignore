@@ -9,3 +9,6 @@ __pycache__/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+
+# my own ignore files
+tmpignore
