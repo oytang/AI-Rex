@@ -4,13 +4,13 @@
 
 | Descriptor | Description                    | Atom/Bond | Ref.  | Package                                              |
 | ---------- | ------------------------------ | --------- | ----- | ---------------------------------------------------- |
-| PC         | Hirshfeld partial charge       | Atom      | \[1\] | ![qmdesc](https://github.com/yanfeiguan/qmdesc)   |
-| FN         | Neucleuphilic Fukui indices    | Atom      | \[1\] | ![qmdesc](https://github.com/yanfeiguan/qmdesc)    |
-| FE         | Electrophilic Fukui indices    | Atom      | \[1\] | ![qmdesc](https://github.com/yanfeiguan/qmdesc)    |
-| NSC        | NMR shielding constants        | Atom      | \[1\] | ![qmdesc](https://github.com/yanfeiguan/qmdesc)   |
-| GC         | GasteigerCharge                | Atom      | \[2\] | !\[Rdkit\](https://www.rdkit.org/docs/Cookbook.html) |
-| MR         | Molar refractivity             | Atom      | \[3\] | !\[Rdkit\](https://www.rdkit.org/docs/Cookbook.html) |
-| Apol       | Atomic polarizability          | Atom      | \[4\] | !\[Rdkit\](https://www.rdkit.org/docs/Cookbook.html) |
+| PC         | Hirshfeld partial charge       | Atom      | \[1\] | [qmdesc](https://github.com/yanfeiguan/qmdesc)   |
+| FN         | Neucleuphilic Fukui indices    | Atom      | \[1\] | [qmdesc](https://github.com/yanfeiguan/qmdesc)    |
+| FE         | Electrophilic Fukui indices    | Atom      | \[1\] | [qmdesc](https://github.com/yanfeiguan/qmdesc)    |
+| NSC        | NMR shielding constants        | Atom      | \[1\] | [qmdesc](https://github.com/yanfeiguan/qmdesc)   |
+| GC         | GasteigerCharge                | Atom      | \[2\] | [Rdkit](https://www.rdkit.org/docs/Cookbook.html) |
+| MR         | Molar refractivity             | Atom      | \[3\] | [Rdkit](https://www.rdkit.org/docs/Cookbook.html) |
+| Apol       | Atomic polarizability          | Atom      | \[4\] | [Rdkit](https://www.rdkit.org/docs/Cookbook.html) |
 | SHI        | Steric hindrance index         | Atom      | \[5\] | \-                                                   |
 | TSEI       | Toplogical steric effect index | Atom      | \[5\] | \-                                                   |
 | SB         | Single bond                    | Bond      | \-    | \-                                                   |
@@ -23,10 +23,10 @@
 | SA         | Stereo-Any                     | Bond      | \-    | \-                                                   |
 | SS         | Stereo-S                       | Bond      | \-    | \-                                                   |
 | SR         | Stereo-R                       | Bond      | \-    | \-                                                   |
-| BO         | Bond order                     | Bond      | \[1\] | !\[qmdesc\](!https://github.com/yanfeiguan/qmdesc)   |
-| BL         | Bond length                    | Bond      | \[1\] | !\[qmdesc\](!https://github.com/yanfeiguan/qmdesc)   |
-| BDE        | Bond dissociation enthalpies   | Bond      | \[6\] | !\[alfabet\](https://github.com/NREL/alfabet)        |'
-| BDFE       | Bond dissociation free energies   | Bond      | \[6\] | !\[alfabet\](https://github.com/NREL/alfabet)        |'
+| BO         | Bond order                     | Bond      | \[1\] | [qmdesc](https://github.com/yanfeiguan/qmdesc)   |
+| BL         | Bond length                    | Bond      | \[1\] | [qmdesc](https://github.com/yanfeiguan/qmdesc)   |
+| BDE        | Bond dissociation enthalpies   | Bond      | \[6\] | [alfabet](https://github.com/NREL/alfabet)        |'
+| BDFE       | Bond dissociation free energies   | Bond      | \[6\] |[alfabet](https://github.com/NREL/alfabet)        |'
 
 
 **Refernces**
