@@ -4,10 +4,10 @@
 
 | Descriptor | Description                    | Atom/Bond | Ref.  | Package                                              |
 | ---------- | ------------------------------ | --------- | ----- | ---------------------------------------------------- |
-| PC         | Hirshfeld partial charge       | Atom      | \[1\] | !\[qmdesc\](!https://github.com/yanfeiguan/qmdesc)   |
-| FN         | Neucleuphilic Fukui indices    | Atom      | \[1\] | !\[qmdesc\](!https://github.com/yanfeiguan/qmdesc)   |
-| FE         | Electrophilic Fukui indices    | Atom      | \[1\] | !\[qmdesc\](!https://github.com/yanfeiguan/qmdesc)   |
-| NSC        | NMR shielding constants        | Atom      | \[1\] | !\[qmdesc\](!https://github.com/yanfeiguan/qmdesc)   |
+| PC         | Hirshfeld partial charge       | Atom      | \[1\] | ![qmdesc](https://github.com/yanfeiguan/qmdesc)   |
+| FN         | Neucleuphilic Fukui indices    | Atom      | \[1\] | ![qmdesc](https://github.com/yanfeiguan/qmdesc)    |
+| FE         | Electrophilic Fukui indices    | Atom      | \[1\] | ![qmdesc](https://github.com/yanfeiguan/qmdesc)    |
+| NSC        | NMR shielding constants        | Atom      | \[1\] | ![qmdesc](https://github.com/yanfeiguan/qmdesc)   |
 | GC         | GasteigerCharge                | Atom      | \[2\] | !\[Rdkit\](https://www.rdkit.org/docs/Cookbook.html) |
 | MR         | Molar refractivity             | Atom      | \[3\] | !\[Rdkit\](https://www.rdkit.org/docs/Cookbook.html) |
 | Apol       | Atomic polarizability          | Atom      | \[4\] | !\[Rdkit\](https://www.rdkit.org/docs/Cookbook.html) |
