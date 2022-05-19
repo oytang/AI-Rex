@@ -10,18 +10,24 @@ from rdkit.Chem import rdChemReactions
 from tqdm import tqdm, trange
 
 def removemap(rxnstr):
-    """remove atommapping"""
+    """
+    Remove atom-mapping
+    """
     rxn = rdChemReactions.ReactionFromSmarts(rxnstr, useSmiles=True)
     rdChemReactions.RemoveMappingNumbersFromReactions(rxn)
     return rdChemReactions.ReactionToSmiles(rxn)
 
 def reverse_temp(temp):
+    """
+    Convert retro template to forward template
+    """
     pt, rts = temp.split(">>")
     rt_list = rts.split(".")
     new_rt_list = []
     for rt in rt_list:
         new_rt_list.append(rt[1:-1])
-    return "("+".".join(new_rt_list)+")"+">>"+ pt[1:-1]
+    print(new_rt_list)
+    return "("+").(".join(new_rt_list)+")"+">>"+ pt[1:-1]
 
 def clear_atom_map(smis):
     mol = Chem.MolFromSmiles(smis)
