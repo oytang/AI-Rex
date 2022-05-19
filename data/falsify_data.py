@@ -26,8 +26,7 @@ def reverse_temp(temp):
     new_rt_list = []
     for rt in rt_list:
         new_rt_list.append(rt[1:-1])
-    print(new_rt_list)
-    return "("+").(".join(new_rt_list)+")"+">>"+ pt[1:-1]
+    return "("+".".join(new_rt_list)+")"+">>"+ pt[1:-1]
 
 def clear_atom_map(smis):
     mol = Chem.MolFromSmiles(smis)
