@@ -117,7 +117,7 @@ def get_bde(smiles):
      homolytic bond dissociation energies (BDEs)
     '''
     cols = ['bde_pred', 'bdfe_pred'] #, 
-    df = bde_model.predict([smiles])
+    df = bde_model.predict([smiles], drop_duplicates = False)
     df_bde_res = df.set_index('bond_index')[cols]
     
     edge_indices = []
