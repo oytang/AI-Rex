@@ -14,8 +14,11 @@ from sterics import get_buried_vol, get_SHI, get_TSEI
 from bde import get_bde
 from bond import get_bond_basic_attrs
 from pchem import get_polarizability, get_GasteigerCharge, get_MR
+from joblib import Parallel, delayed
+from tqdm import tqdm
 
-
+import os
+os.environ["CUDA_VISIBLE_DEVICES"]=""
 
 def get_rrd(smiles):
 
@@ -68,3 +71,25 @@ def get_rrd(smiles):
     dfa = dfa.join(gc).join(mr).join(apol).join(shi).join(tsei).join(dfv)
 
     return dfa, dfb
+
+
+class RRDCalculator:
+    
+    def __init__(self):
+        pass
+    
+    def transform(self, smiles):
+        '''
+        smiles: smile string
+        '''
+        try:
+            dfa, dfb = get_rrd(smiles)
+        except:
+            print('error when calculating %s' % smiles)
+            dfa = dfb = pd.DataFrame([])
+        return dfa, dfb
+    
+    def batch_transform(self, smiles_list, n_jobs = -1):
+        P = Parallel(n_jobs=n_jobs)
+        res = P(delayed(self.transform)(smiles) for smiles in tqdm(smiles_list, ascii=True))
+        return res
