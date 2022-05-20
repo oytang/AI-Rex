@@ -317,7 +317,7 @@ def buried_vol(occ_grid, point_tree, origin, radius = 3.5, grid_spacing = 0.05, 
     tot_vol = n_voxel * cube
     # Find occupied points within the same spherical volume
     point_tree = spatial.cKDTree(occ_grid,balanced_tree=False,compact_nodes=False)
-    n_occ = len(point_tree.query_ball_point(origin, R, workers=-1))
+    n_occ = len(point_tree.query_ball_point(origin, R, workers=1))
     occ_vol = n_occ * cube
     #free_vol = tot_vol - occ_vol 
     percent_buried_vol = occ_vol / tot_vol * 100.0
