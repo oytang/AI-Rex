@@ -1,10 +1,7 @@
 ## A package to compute the Reactivity-Related bond/atom-wise Descriptors (RRD).
 
 ### TODO list
-- [ ] Buried Volume
-- [ ] Sterimol2Vec
-- [ ] Vol2Vec
-- [ ] Sterimol parameters
+- [x ] Buried Volume
 - [ ] Frontier orbital energy
 
 
@@ -21,6 +18,10 @@
 | Apol       | Atomic polarizability          | Atom      | \[4\] | [Rdkit](https://www.rdkit.org/docs/Cookbook.html) |
 | SHI        | Steric hindrance index         | Atom      | \[5\] | \-                                                   |
 | TSEI       | Toplogical steric effect index | Atom      | \[5\] | \-                                                   |
+| OV       | Occupied volume | Atom      | \[7\] | [DBSTEP](https://github.com/patonlab/DBSTEP/tree/325e24224e523014c61263bef357c9fa55316f32/dbstep)                                                  |
+| PBV       | Percent buried volume | Atom      | \[7\] | [DBSTEP](https://github.com/patonlab/DBSTEP/tree/325e24224e523014c61263bef357c9fa55316f32/dbstep)                                                  |
+| PSV       | Percent shell volume | Atom      | \[7\] |[DBSTEP](https://github.com/patonlab/DBSTEP/tree/325e24224e523014c61263bef357c9fa55316f32/dbstep)                                                   |
+
 | SB         | Single bond                    | Bond      | \-    | \-                                                   |
 | DB         | Double bond                    | Bond      | \-    | \-                                                   |
 | TB         | Triple bond                    | Bond      | \-    | \-                                                   |
@@ -44,4 +45,4 @@
 - [4]. Miller and Savchik, JACS 101(24) 7206-7213, 1979.
 - [5]. Cao, Chenzhong, and Li Liu. "Topological steric effect index and its application." Journal of chemical information and computer sciences 44.2 (2004): 678-687.
 - [6]. St John, Peter C., et al. "Prediction of organic homolytic bond dissociation enthalpies at near chemical accuracy with sub-second computational cost." Nature communications 11.1 (2020): 1-12.
-
+- [7]. A. Poater, F. Ragone, R. Mariz, R. Dorta and L. Cavallo, Chem. Eur. J. 2010, 16, 14348–14353.
