@@ -18,10 +18,9 @@
 | Apol       | Atomic polarizability          | Atom      | \[4\] | [Rdkit](https://www.rdkit.org/docs/Cookbook.html) |
 | SHI        | Steric hindrance index         | Atom      | \[5\] | \-                                                   |
 | TSEI       | Toplogical steric effect index | Atom      | \[5\] | \-                                                   |
-| OV       | Occupied volume | Atom      | \[7\] | [DBSTEP](https://github.com/patonlab/DBSTEP/tree/325e24224e523014c61263bef357c9fa55316f32/dbstep)                                                  |
-| PBV       | Percent buried volume | Atom      | \[7\] | [DBSTEP](https://github.com/patonlab/DBSTEP/tree/325e24224e523014c61263bef357c9fa55316f32/dbstep)                                                  |
-| PSV       | Percent shell volume | Atom      | \[7\] |[DBSTEP](https://github.com/patonlab/DBSTEP/tree/325e24224e523014c61263bef357c9fa55316f32/dbstep)                                                   |
-
+| OV       | Occupied volume | Atom      | \[7\] | [DBSTEP](https://github.com/patonlab/DBSTEP/tree/325e24224e523014c61263bef357c9fa55316f32/dbstep) |
+| PBV       | Percent buried volume | Atom      | \[7\] | [DBSTEP](https://github.com/patonlab/DBSTEP/tree/325e24224e523014c61263bef357c9fa55316f32/dbstep) |           
+| PSV       | Percent shell volume | Atom      | \[7\] |[DBSTEP](https://github.com/patonlab/DBSTEP/tree/325e24224e523014c61263bef357c9fa55316f32/dbstep)  |
 | SB         | Single bond                    | Bond      | \-    | \-                                                   |
 | DB         | Double bond                    | Bond      | \-    | \-                                                   |
 | TB         | Triple bond                    | Bond      | \-    | \-                                                   |
@@ -34,8 +33,8 @@
 | SR         | Stereo-R                       | Bond      | \-    | \-                                                   |
 | BO         | Bond order                     | Bond      | \[1\] | [qmdesc](https://github.com/yanfeiguan/qmdesc)   |
 | BL         | Bond length                    | Bond      | \[1\] | [qmdesc](https://github.com/yanfeiguan/qmdesc)   |
-| BDE        | Bond dissociation enthalpies   | Bond      | \[6\] | [alfabet](https://github.com/NREL/alfabet)        |'
-| BDFE       | Bond dissociation free energies   | Bond      | \[6\] |[alfabet](https://github.com/NREL/alfabet)        |'
+| BDE        | Bond dissociation enthalpies   | Bond      | \[6\] | [alfabet](https://github.com/NREL/alfabet)        |
+| BDFE       | Bond dissociation free energies   | Bond      | \[6\] |[alfabet](https://github.com/NREL/alfabet)        |
 
 
 **Refernces**
