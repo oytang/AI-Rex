@@ -19,7 +19,7 @@ args = parser.parse_args()
 
 # dataloader
 df = pd.read_csv('cleaned_uspto50k.csv')
-rxn_smiles = list(df['rxn_smiles'])
+rxn_smiles = list(df['rxn_smiles'].drop_duplicates())
 retro_templates = list(df['retro_template'].drop_duplicates())
 
 
@@ -30,7 +30,7 @@ false_rxn_dict = {
     'true_rxn_smiles': [],
     'forward_template': []
 }
-for i in range(len(df[args.i_start:args.i_end])):
+for i in range(args.i_start, args.i_end):
     rxn = rxn_smiles[i]
     rxn = removemap(rxn)
     rt, pt = rxn2rtpt(rxn)
