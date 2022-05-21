@@ -67,7 +67,7 @@ false_rxn_df = pd.DataFrame(false_rxn_dict)
 print(f'{len(false_rxn_df)} false reactions were succesfully generated this time,')
 false_rxn_df.drop_duplicates(subset='rxn_smiles', inplace=True)
 print(f'{len(false_rxn_df)} our of which are unique.')
-false_rxn_df.to_csv(f'negative_random_{args.i_start}_{args.i_end}.csv', index=False)
+false_rxn_df.to_csv(f'negative_random_{args.i_start:05d}_{args.i_end:05d}.csv', index=False)
 print(f'In total, {len(false_rxn_df)} false reactions were successfully generated using random template mapping.')
 
 
