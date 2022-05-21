@@ -1,7 +1,6 @@
 # raw dataset files
 1976_Sep2016_USPTOgrants_smiles*
 
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -12,3 +11,7 @@ __pycache__/
 
 # my own ignore files
 tmpignore
+
+# sbatch files
+sbatch
+sbatch*
