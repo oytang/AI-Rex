@@ -1,7 +1,21 @@
 ## A package to compute the Reactivity-Related bond/atom-wise Descriptors (RRD).
 
+### Usage
+```python
+from rrd import RRDCalculator
+RRDC = RRDCalculator(scale=True)
+smiles = 'CCCC'
+
+## one smiles
+dfa, dfb = RRDC.transform(smiles)
+
+## many smiles: compute in parallel
+smiles_list = [smiles for i in range(20)]
+res = RRDC.batch_transform(smiles_list, n_jobs=-1)
+```
+
 ### TODO list
-- [x ] Buried Volume
+- [x] Buried Volume
 - [ ] Frontier orbital energy
 
 
