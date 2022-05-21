@@ -12,6 +12,9 @@ from rdkit import Chem
 from rdkit.Chem import AllChem, rdMolDescriptors, Descriptors
 from qmdesc import ReactivityDescriptorHandler
 
+import os
+os.environ["CUDA_VISIBLE_DEVICES"]=""
+
 RDH = ReactivityDescriptorHandler()
 
 def get_qmdesc(smiles):
