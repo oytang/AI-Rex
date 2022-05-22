@@ -18,3 +18,5 @@ https://github.com/pschwllr/MolecularTransformer
 运行时，将ipynb文件放在Molecular Transformer文件夹下，All_Data.zip解压在./data文件夹下，pt文件放在./experiments/checkpoints/All_Data_binary下。
 
 若从头训练模型，直接逐步运行ipynb即可，若使用预训练模型，确认模型和数据的路径正确后，从make predictions部分开始运行即可。
+
+# 0522新增功能：可以输出类别概率
