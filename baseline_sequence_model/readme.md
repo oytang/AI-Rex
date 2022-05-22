@@ -20,3 +20,6 @@ https://github.com/pschwllr/MolecularTransformer
 若从头训练模型，直接逐步运行ipynb即可，若使用预训练模型，确认模型和数据的路径正确后，从make predictions部分开始运行即可。
 
 # 0522新增功能：可以输出类别概率
+
+ipynb放在百度网盘
+链接:https://pan.baidu.com/s/1Enm3v24-pp0tJKORWa5oAg  密码:e6mg
