@@ -1,3 +1,7 @@
+"""
+This file is deprecated as Mercury has continued the work.
+"""
+
 import re
 import pandas as pd
 from rdkit import Chem
