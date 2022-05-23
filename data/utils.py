@@ -2,6 +2,8 @@
 # The codes are comestically decorated
 # with some necessary bug fix
 
+from rdkit.Chem import MolToSmiles, MolFromSmiles
+
 
 def reverse_temp(temp):
     """
@@ -38,3 +40,10 @@ def rxn2rtpt(rxn_smi):
     
     # Unknown situation, might happen in uncleaned dataset
     raise ValueError(f'Reaction SMILES is not valid: {rxn_smi}')
+
+
+def can_SMILES(smiles):
+    """
+    Convert a SMILES in any format to a canonicalized SMILES.
+    """
+    return MolToSmiles(MolFromSmiles(smiles))

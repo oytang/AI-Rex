@@ -7,3 +7,7 @@
     ```
     python compile_random_comprehensive.py
     ```
+- `ECFP-split.py` 可以根据反应物的分子指纹ECFP来将反应进行聚类然后进行train-valid-test-split 同时也做了更多一些预处理来最大限度上避免数据泄露 使用方法如下
+    ```
+    python ECFP-split.py [--help] [--num_false 42000 #从整个随机负例中采样的数量] [--train_size 0.7] [--valid_size 0.2] [--test_size 0.1] [--ECFP4nBits 1024 #分子指纹二元向量的长度]
+    ```
