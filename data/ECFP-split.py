@@ -20,6 +20,7 @@ parser.add_argument('--train_size', type=float, default=0.7)
 parser.add_argument('--valid_size', type=float, default=0.2)
 parser.add_argument('--test_size', type=float, default=0.1)
 parser.add_argument('--ECFP4nBits', type=int, default=1024)
+parser.add_argument('--QM_compatible', type=bool, default=False)
 
 args = parser.parse_args()
 
@@ -49,11 +50,19 @@ pos_rxn = pos_rxn.drop_duplicates(subset='rxn_smiles').reset_index(drop=True)
 neg_rxn_1 = pd.read_csv('negative_strict.csv')
 neg_rxn_1 = neg_rxn_1[['rxn_smiles', 'label']]
 neg_rxn_1 = neg_rxn_1.drop_duplicates(subset='rxn_smiles')
-neg_rxn_2 = pd.read_csv('negative_random_comprehensive.csv')
-neg_rxn_2 = neg_rxn_2.drop_duplicates(subset='rxn_smiles').reset_index(drop=True)
-neg_rxn_2 = neg_rxn_2[['rxn_smiles', 'label']]
-# random sub-sample neg_rxn_2 to have a equally labeled dataset
-neg_rxn_2 = neg_rxn_2.loc[np.random.choice(a=len(neg_rxn_2), size=args.num_false, replace=False)]
+print(f'# strict negative reactions: {len(neg_rxn_1)}')
+if not args.QM_compatible:
+    print('negative_random_comprehensive.csv')
+    neg_rxn_2 = pd.read_csv('negative_random_comprehensive.csv')
+    neg_rxn_2 = neg_rxn_2.drop_duplicates(subset='rxn_smiles').reset_index(drop=True)
+    neg_rxn_2 = neg_rxn_2[['rxn_smiles', 'label']]
+    # random sub-sample neg_rxn_2 to have a equally labeled dataset
+    neg_rxn_2 = neg_rxn_2.loc[np.random.choice(a=len(neg_rxn_2), size=args.num_false, replace=False)]
+else:
+    # use a subset of neg_rxn_2 that is compatible with QM descriptor pre-computation
+    print('negative_random.csv')
+    neg_rxn_2 = pd.read_csv('negative_random.csv')[:40392]
+print(f'# random negative reactions: {len(neg_rxn_2)}')
 neg_rxn = pd.concat([neg_rxn_1, neg_rxn_2]).drop_duplicates(subset='rxn_smiles').reset_index(drop=True)
 
 
@@ -72,6 +81,7 @@ all_rxn['ECFP4'] = [list(AllChem.GetMorganFingerprintAsBitVect(Chem.MolFromSmile
 
 
 # conditional split of dataset
+print('fit PCA')
 X = np.array(all_rxn['ECFP4'].values.tolist())
 # the first PC grabs major variance
 pca = PCA(n_components=1)
@@ -81,6 +91,7 @@ X_pca = pca.components_.transpose()
 
 # Two-tail double-side split
 # calculate percentile from split size
+print('calculate split interval')
 train_prec = [
     [(1-args.train_size)*0.25, 0.25+args.train_size*0.25], 
     [0.5+(1-args.train_size)*0.25, 0.75+args.train_size*0.25]
@@ -119,6 +130,7 @@ test_id = getIDFromSplit(X_pca[:,0], test_split)
 
 
 # export splitted dataset
+print('export split dataset')
 all_rxn = all_rxn[['rxn_smiles', 'label']]
 all_rxn.loc[train_id].to_csv('data_train.csv', index=False)
 all_rxn.loc[valid_id].to_csv('data_valid.csv', index=False)
