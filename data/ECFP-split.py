@@ -1,9 +1,11 @@
 from cProfile import label
+from operator import index
 import numpy as np
 import pandas as pd
 from rdkit import Chem
 from rdkit.Chem import AllChem
 from sklearn.decomposition import PCA
+from sklearn.model_selection import train_test_split
 from tqdm import tqdm
 
 from falsify_data import removemap
@@ -70,68 +72,84 @@ neg_rxn = pd.concat([neg_rxn_1, neg_rxn_2]).drop_duplicates(subset='rxn_smiles')
 all_rxn = pd.concat([pos_rxn, neg_rxn])
 # suffle rows & reset index
 all_rxn = all_rxn.drop_duplicates(subset='rxn_smiles').sample(frac=1).reset_index(drop=True)
-rt_list = []
-for rxn in all_rxn['rxn_smiles']:
-    rt, _ = rxn2rtpt(rxn)
-    # sort reactants in a uniform order
-    rt_list.append('.'.join(sorted(rt.split('.'))))
-all_rxn['rt'] = rt_list
-print('generate ECFP4')
-all_rxn['ECFP4'] = [list(AllChem.GetMorganFingerprintAsBitVect(Chem.MolFromSmiles(smi), 2, nBits=args.ECFP4nBits)) for smi in tqdm(rt_list)]
 
 
-# conditional split of dataset
-print('fit PCA')
-X = np.array(all_rxn['ECFP4'].values.tolist())
-# the first PC grabs major variance
-pca = PCA(n_components=1)
-pca.fit(X.transpose())
-X_pca = pca.components_.transpose()
+if args.ECFP4nBits == 0:
+
+    # export splitted dataset
+    print('export split dataset')
+    all_rxn = all_rxn[['rxn_smiles', 'label']]
+    data_train, data_test = train_test_split(all_rxn, test_size=args.test_size)
+    data_train, data_valid = train_test_split(data_train, test_size=args.valid_size/(1-args.test_size))
+    data_train.to_csv('data_train.csv', index=False)
+    data_valid.to_csv('data_valid.csv', index=False)
+    data_test.to_csv('data_test.csv', index=False)
+    
+
+elif args.ECFP4nBits > 0:
+
+    rt_list = []
+    for rxn in all_rxn['rxn_smiles']:
+        rt, _ = rxn2rtpt(rxn)
+        # sort reactants in a uniform order
+        rt_list.append('.'.join(sorted(rt.split('.'))))
+    all_rxn['rt'] = rt_list
+    print('generate ECFP4')
+    all_rxn['ECFP4'] = [list(AllChem.GetMorganFingerprintAsBitVect(Chem.MolFromSmiles(smi), 2, nBits=args.ECFP4nBits)) for smi in tqdm(rt_list)]
 
 
-# Two-tail double-side split
-# calculate percentile from split size
-print('calculate split interval')
-train_prec = [
-    [(1-args.train_size)*0.25, 0.25+args.train_size*0.25], 
-    [0.5+(1-args.train_size)*0.25, 0.75+args.train_size*0.25]
-]
-valid_prec = [
-    [args.test_size*0.25, (args.test_size+args.valid_size)*0.25], 
-    [0.25+args.train_size*0.25, 0.25+(args.train_size+args.valid_size)*0.25], 
-    [0.5+args.test_size*0.25, 0.5+(args.test_size+args.valid_size)*0.25], 
-    [0.75+args.train_size*0.25, 0.75+(args.train_size+args.valid_size)*0.25]
-]
-test_prec = [
-    [0.0, args.test_size*0.25],
-    [0.25+(args.train_size+args.valid_size)*0.25, 0.5],
-    [0.5, 0.5+args.test_size*0.25],
-    [0.75+(args.train_size+args.valid_size)*0.25, 1.0]
-]
-
-train_split = [np.percentile(X_pca[:,0], np.array(itv)*100) for itv in train_prec]
-valid_split = [np.percentile(X_pca[:,0], np.array(itv)*100) for itv in valid_prec]
-test_split = [np.percentile(X_pca[:,0], np.array(itv)*100) for itv in test_prec]
-# ensure inclusion of tails
-test_split[0][0] -= 1
-test_split[3][1] += 1
-
-def getIDFromSplit(X, split):
-    ids = []
-    for itv in split:
-        upBound = np.arange(len(X))[X <= itv[1]]
-        loBound = np.arange(len(X))[X > itv[0]]
-        ids += list(set(upBound).intersection(set(loBound)))
-    return ids
-
-train_id = getIDFromSplit(X_pca[:,0], train_split)
-valid_id = getIDFromSplit(X_pca[:,0], valid_split)
-test_id = getIDFromSplit(X_pca[:,0], test_split)
+    # conditional split of dataset
+    print('fit PCA')
+    X = np.array(all_rxn['ECFP4'].values.tolist())
+    # the first PC grabs major variance
+    pca = PCA(n_components=1)
+    pca.fit(X.transpose())
+    X_pca = pca.components_.transpose()
 
 
-# export splitted dataset
-print('export split dataset')
-all_rxn = all_rxn[['rxn_smiles', 'label']]
-all_rxn.loc[train_id].to_csv('data_train.csv', index=False)
-all_rxn.loc[valid_id].to_csv('data_valid.csv', index=False)
-all_rxn.loc[test_id].to_csv('data_test.csv', index=False)
+    # Two-tail double-side split
+    # calculate percentile from split size
+    print('calculate split interval')
+    train_prec = [
+        [(1-args.train_size)*0.25, 0.25+args.train_size*0.25], 
+        [0.5+(1-args.train_size)*0.25, 0.75+args.train_size*0.25]
+    ]
+    valid_prec = [
+        [args.test_size*0.25, (args.test_size+args.valid_size)*0.25], 
+        [0.25+args.train_size*0.25, 0.25+(args.train_size+args.valid_size)*0.25], 
+        [0.5+args.test_size*0.25, 0.5+(args.test_size+args.valid_size)*0.25], 
+        [0.75+args.train_size*0.25, 0.75+(args.train_size+args.valid_size)*0.25]
+    ]
+    test_prec = [
+        [0.0, args.test_size*0.25],
+        [0.25+(args.train_size+args.valid_size)*0.25, 0.5],
+        [0.5, 0.5+args.test_size*0.25],
+        [0.75+(args.train_size+args.valid_size)*0.25, 1.0]
+    ]
+
+    train_split = [np.percentile(X_pca[:,0], np.array(itv)*100) for itv in train_prec]
+    valid_split = [np.percentile(X_pca[:,0], np.array(itv)*100) for itv in valid_prec]
+    test_split = [np.percentile(X_pca[:,0], np.array(itv)*100) for itv in test_prec]
+    # ensure inclusion of tails
+    test_split[0][0] -= 1
+    test_split[3][1] += 1
+
+    def getIDFromSplit(X, split):
+        ids = []
+        for itv in split:
+            upBound = np.arange(len(X))[X <= itv[1]]
+            loBound = np.arange(len(X))[X > itv[0]]
+            ids += list(set(upBound).intersection(set(loBound)))
+        return ids
+
+    train_id = getIDFromSplit(X_pca[:,0], train_split)
+    valid_id = getIDFromSplit(X_pca[:,0], valid_split)
+    test_id = getIDFromSplit(X_pca[:,0], test_split)
+
+
+    # export splitted dataset
+    print('export split dataset')
+    all_rxn = all_rxn[['rxn_smiles', 'label']]
+    all_rxn.loc[train_id].to_csv('data_train.csv', index=False)
+    all_rxn.loc[valid_id].to_csv('data_valid.csv', index=False)
+    all_rxn.loc[test_id].to_csv('data_test.csv', index=False)
