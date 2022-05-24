@@ -1,8 +1,19 @@
 ## A package to compute the Reactivity-Related bond/atom-wise Descriptors (RRD).
 
+
+## Installation
+```bash
+# 安装依赖
+pip install -r ./requirements.txt 
+```
+
 ### Usage
 ```python
-from rrd import RRDCalculator
+# import RRD 包之前前需要加入环境变量
+import sys
+sys.path.insert(0, '/XXX/XXXX/ai4science-chemistry' ) 
+
+from RRD import RRDCalculator
 RRDC = RRDCalculator(scale=True)
 smiles = 'CCCC'
 
@@ -15,7 +26,7 @@ res = RRDC.batch_transform(smiles_list, n_jobs=-1)
 ```
 
 ### TODO list
-- [x] Buried Volume
+- [x] Buried Volume: trained model-based
 - [ ] Frontier orbital energy
 
 
@@ -32,9 +43,9 @@ res = RRDC.batch_transform(smiles_list, n_jobs=-1)
 | Apol       | Atomic polarizability          | Atom      | \[4\] | [Rdkit](https://www.rdkit.org/docs/Cookbook.html) |
 | SHI        | Steric hindrance index         | Atom      | \[5\] | \-                                                   |
 | TSEI       | Toplogical steric effect index | Atom      | \[5\] | \-                                                   |
-| OV       | Occupied volume | Atom      | \[7\] | [DBSTEP](https://github.com/patonlab/DBSTEP/tree/325e24224e523014c61263bef357c9fa55316f32/dbstep) |
-| PBV       | Percent buried volume | Atom      | \[7\] | [DBSTEP](https://github.com/patonlab/DBSTEP/tree/325e24224e523014c61263bef357c9fa55316f32/dbstep) |           
-| PSV       | Percent shell volume | Atom      | \[7\] |[DBSTEP](https://github.com/patonlab/DBSTEP/tree/325e24224e523014c61263bef357c9fa55316f32/dbstep)  |
+| OV       | Occupied volume | Atom      | \[7\] | Trained, [DBSTEP](https://github.com/patonlab/DBSTEP/tree/325e24224e523014c61263bef357c9fa55316f32/dbstep) |
+| PBV       | Percent buried volume | Atom      | \[7\] | Trained, [DBSTEP](https://github.com/patonlab/DBSTEP/tree/325e24224e523014c61263bef357c9fa55316f32/dbstep) |           
+| PSV       | Percent shell volume | Atom      | \[7\] |Trained, [DBSTEP](https://github.com/patonlab/DBSTEP/tree/325e24224e523014c61263bef357c9fa55316f32/dbstep)  |
 | SB         | Single bond                    | Bond      | \-    | \-                                                   |
 | DB         | Double bond                    | Bond      | \-    | \-                                                   |
 | TB         | Triple bond                    | Bond      | \-    | \-                                                   |
