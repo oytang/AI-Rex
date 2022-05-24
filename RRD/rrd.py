@@ -9,18 +9,20 @@ Created on Thu May 19 16:20:17 2022
 import pandas as pd
 import numpy as np
 
-from qm import get_qmdesc
-from sterics import get_buried_vol, get_SHI, get_TSEI
-from bde import get_bde
-from bond import get_bond_basic_attrs
-from pchem import get_polarizability, get_GasteigerCharge, get_MR
+from RRD.qm import get_qmdesc
+from RRD.sterics import get_SHI, get_TSEI, get_buried_vol 
+from RRD.bv_model import GetBV
+from RRD.bde import get_bde
+from RRD.bond import get_bond_basic_attrs
+from RRD.pchem import get_polarizability, get_GasteigerCharge, get_MR
+
 from joblib import Parallel, delayed
 from tqdm import tqdm
 
 import os
 os.environ["CUDA_VISIBLE_DEVICES"]=""
 
-def get_rrd(smiles, with_bv = False):
+def get_rrd(smiles):
 
     """
     # atom
@@ -68,10 +70,10 @@ def get_rrd(smiles, with_bv = False):
     tsei = get_TSEI(smiles)
     
     dfa = dfa.join(gc).join(mr).join(apol).join(shi).join(tsei) #.join(dfv)
+    
     #buried_volume
-    if with_bv:
-        dfv = get_buried_vol(smiles)
-        dfa = dfa.join(dfv)
+    dfv = pd.DataFrame(GetBV([smiles])[0], columns = ['PBV','PSV'])
+    dfa = dfa.join(dfv)
         
     return dfa, dfb
 
@@ -134,16 +136,15 @@ bond_feature_config = {'maxv':{'SB': 1.0,
 
 class RRDCalculator:
     
-    def __init__(self, scale=True, with_bv = False):
+    def __init__(self, scale=True):
         self.scale = scale
-        self.with_bv = with_bv
     
     def transform(self, smiles):
         '''
         smiles: smile string
         '''
         try:
-            dfa, dfb = get_rrd(smiles, with_bv = self.with_bv)
+            dfa, dfb = get_rrd(smiles)
             
         except:
             print('error when calculating %s' % smiles)
