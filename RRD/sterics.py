@@ -303,7 +303,7 @@ def occupied(grid, point_tree, coords, radii, origin, grid_spacing):
 
 
 
-def buried_vol(occ_grid, point_tree, origin, radius = 3.5, grid_spacing = 0.05, strip_width= 0.0):
+def buried_vol(occ_grid, point_tree, origin, radius = 3.0, grid_spacing = 0.05, strip_width= 0.0):
     """ Read which grid points occupy sphere"""
     #if doing a scan, use scan radius for volume
     R = radius
@@ -350,7 +350,7 @@ def buried_vol(occ_grid, point_tree, origin, radius = 3.5, grid_spacing = 0.05, 
 
 
 
-def get_buried_vol(smiles, radius = 3.5,grid_spacing = 0.05, 
+def get_buried_vol(smiles, radius = 3.0,grid_spacing = 0.05, 
                    strip_width = 0.5, randomSeed = 1234, maxIters = 200):
     
     """
