@@ -22,10 +22,7 @@ class BVDataset(InMemoryDataset):
     
     Args:
         root (string): Root directory where the dataset should be saved.
-        name (string): The name of the dataset (:obj:`"mGluR2"`,
-            :obj:`"USP7"`, :obj:`"MTH1"`, :obj:`"RIP2"`, :obj:`"PKCi"`,
-            :obj:`"PHGDH"`, :obj:`"RORg"`, :obj:`"IDO1"`, :obj:`"KLK5"`,
-            :obj:`"Notum"`, :obj:`"EAAT3"`).
+        name (string): The name of the dataset
         transform (callable, optional): A function/transform that takes in an
             :obj:`torch_geometric.data.Data` object and returns a transformed
             version. The data object will be transformed before every access.
