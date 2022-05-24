@@ -18,3 +18,4 @@ sbatch*
 
 # too big dataset files
 negative_random_comprehensive.csv
+.DS_Store
