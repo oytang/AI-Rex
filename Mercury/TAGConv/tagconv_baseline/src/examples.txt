@@ -1,0 +1,2 @@
+FC(F)(F)c1nc(Cl)cc(OC2CCC3(CC2)OCCO3)n1.OCCO>>O=CCO
+COc1ccc(B(O)O)cc1.O=S(=O)(OC1=CCC2(CC1)OCCO2)C(F)(F)F>>OB(O)c1ccc(O)cc1
