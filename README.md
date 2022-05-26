@@ -1,3 +1,9 @@
+[![backgroud](https://img.shields.io/badge/ai4science-Chemistry-blue)](https://ai4science.io/chemistry_zh.html)
+[![branch](https://img.shields.io/badge/Branch-main-green)](https://github.com/Chemino/AI.Rex)
+[![branch](https://img.shields.io/badge/Branch-dev-yellow)](https://github.com/Chemino/AI-Rex/tree/dev)
+
+<a href="url"><img src="./misc/logo.png" align="left" height="170" width="130" ></a>
+
 # AI.Rex
 
 An integrated framework for chemical reaction feasibility prediction. This is a structured solution for one of the Chemistry Challenges of [ai4science hackathon](https://ai4science.io/), organized by [DeepVerse](deepverse.tech/en/), [Bota Bio](www.bota.bio), [Chemical.AI](https://chemical.ai/) and [Foreseen Biotechnology](www.foreseepharma.com/en-us).
