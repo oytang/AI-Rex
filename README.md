@@ -8,6 +8,15 @@
 
 An integrated framework for chemical reaction feasibility prediction. This is a structured solution for one of the Chemistry Challenges of [ai4science hackathon](https://ai4science.io/), organized by [DeepVerse](deepverse.tech/en/), [Bota Bio](www.bota.bio), [Chemical.AI](https://chemical.ai/) and [Foreseen Biotechnology](www.foreseepharma.com/en-us).
 
+## Team members
+[@Chemino](https://github.com/Chemino)
+[@shenwanxiang](https://github.com/shenwanxiang)
+[@Mercury1874](https://github.com/1874Mercury)
+[@jiayujack](https://github.com/jiayujack)
+[@LHZ-HUST](https://github.com/LHZ-HUST)
+[@CreamyLong](https://github.com/CreamyLong)
+
+
 ## Challenge description
 
 Evaluate reactivity/reaction feasibility with quantum mechanics and/or AI technology.
