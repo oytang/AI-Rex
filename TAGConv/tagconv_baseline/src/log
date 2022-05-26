@@ -1,0 +1,539 @@
+nohup: ignoring input
+2022-05-26 01:51:58.578076: I tensorflow/core/util/util.cc:169] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+
+===========================
+gpu: 1
+dataset: ECFP_split_ic
+epoch: 100
+batch_size: 2048
+gnn: tag
+layer: 4
+dim: 1024
+lr: 0.0001
+save_model: True
+tensorboard_dir: ./tensorboard
+===========================
+
+current working directory: /home/lichangyu/Mercury/USPTO/src_tag_baseline
+
+cache found
+loading feature encoder from ../data/ECFP_split_ic/cache/feature_encoder.pkl
+loading train reactants from ../data/ECFP_split_ic/cache/train_reactant_graphs.bin
+loading train products from ../data/ECFP_split_ic/cache/train_product_graphs.bin
+loading train products from ../data/ECFP_split_ic/cache/train_labels.pkl
+loading valid reactants from ../data/ECFP_split_ic/cache/valid_reactant_graphs.bin
+loading valid products from ../data/ECFP_split_ic/cache/valid_product_graphs.bin
+loading valid products from ../data/ECFP_split_ic/cache/valid_labels.pkl
+loading test reactants from ../data/ECFP_split_ic/cache/test_reactant_graphs.bin
+loading test products from ../data/ECFP_split_ic/cache/test_product_graphs.bin
+loading test products from ../data/ECFP_split_ic/cache/test_labels.pkl
+start training
+
+initial case:
+valid  loss_sum: 9188.5887  accuracy: 0.4971  precision: 0.0000  recall: 0.0000  f1_score: 0.0000  roc_auc_score: 0.3001
+test  loss_sum: 18361.8381  accuracy: 0.4879  precision: 0.1053  recall: 0.0005  f1_score: 0.0009  roc_auc_score: 0.3385
+
+epoch 0:
+train  loss_sum: 85620.7042  accuracy: 0.7010  precision: 0.6877  recall: 0.7284  f1_score: 0.7075  roc_auc_score: 0.7450
+valid  loss_sum: 3959.9908  accuracy: 0.7897  precision: 0.7633  recall: 0.8418  f1_score: 0.8006  roc_auc_score: 0.8442
+test  loss_sum: 7888.4714  accuracy: 0.7963  precision: 0.7695  recall: 0.8578  f1_score: 0.8113  roc_auc_score: 0.8378
+
+epoch 1:
+train  loss_sum: 26631.8361  accuracy: 0.7838  precision: 0.7440  recall: 0.8596  f1_score: 0.7977  roc_auc_score: 0.8445
+valid  loss_sum: 3776.6236  accuracy: 0.7951  precision: 0.7609  recall: 0.8625  f1_score: 0.8085  roc_auc_score: 0.8572
+test  loss_sum: 7541.2216  accuracy: 0.8027  precision: 0.7670  recall: 0.8810  f1_score: 0.8200  roc_auc_score: 0.8499
+
+epoch 2:
+train  loss_sum: 25359.1732  accuracy: 0.7925  precision: 0.7526  recall: 0.8664  f1_score: 0.8055  roc_auc_score: 0.8607
+valid  loss_sum: 3692.2402  accuracy: 0.7942  precision: 0.8139  recall: 0.7645  f1_score: 0.7885  roc_auc_score: 0.8837
+test  loss_sum: 7343.4087  accuracy: 0.8007  precision: 0.8170  recall: 0.7852  f1_score: 0.8008  roc_auc_score: 0.8844
+
+epoch 3:
+train  loss_sum: 24002.9054  accuracy: 0.8009  precision: 0.7642  recall: 0.8670  f1_score: 0.8124  roc_auc_score: 0.8753
+valid  loss_sum: 3361.5985  accuracy: 0.8104  precision: 0.7901  recall: 0.8470  f1_score: 0.8176  roc_auc_score: 0.8888
+test  loss_sum: 6787.0913  accuracy: 0.8140  precision: 0.7900  recall: 0.8656  f1_score: 0.8261  roc_auc_score: 0.8840
+
+epoch 4:
+train  loss_sum: 23584.4750  accuracy: 0.8026  precision: 0.7732  recall: 0.8521  f1_score: 0.8108  roc_auc_score: 0.8793
+valid  loss_sum: 3264.4983  accuracy: 0.8134  precision: 0.7713  recall: 0.8926  f1_score: 0.8275  roc_auc_score: 0.8917
+test  loss_sum: 6610.4012  accuracy: 0.8133  precision: 0.7706  recall: 0.9028  f1_score: 0.8315  roc_auc_score: 0.8861
+
+epoch 5:
+train  loss_sum: 21881.0083  accuracy: 0.8148  precision: 0.7869  recall: 0.8597  f1_score: 0.8217  roc_auc_score: 0.8986
+valid  loss_sum: 3116.1527  accuracy: 0.8231  precision: 0.8166  recall: 0.8350  f1_score: 0.8257  roc_auc_score: 0.9060
+test  loss_sum: 6240.4916  accuracy: 0.8238  precision: 0.8112  recall: 0.8534  f1_score: 0.8318  roc_auc_score: 0.9051
+
+epoch 6:
+train  loss_sum: 21713.0590  accuracy: 0.8169  precision: 0.7914  recall: 0.8567  f1_score: 0.8227  roc_auc_score: 0.8988
+valid  loss_sum: 3058.3991  accuracy: 0.8270  precision: 0.8239  recall: 0.8331  f1_score: 0.8284  roc_auc_score: 0.9091
+test  loss_sum: 6138.9278  accuracy: 0.8282  precision: 0.8206  recall: 0.8489  f1_score: 0.8345  roc_auc_score: 0.9074
+
+epoch 7:
+train  loss_sum: 20489.9589  accuracy: 0.8277  precision: 0.8055  recall: 0.8610  f1_score: 0.8323  roc_auc_score: 0.9112
+valid  loss_sum: 2990.8162  accuracy: 0.8322  precision: 0.8427  recall: 0.8181  f1_score: 0.8302  roc_auc_score: 0.9180
+test  loss_sum: 5980.8338  accuracy: 0.8351  precision: 0.8435  recall: 0.8311  f1_score: 0.8373  roc_auc_score: 0.9191
+
+epoch 8:
+train  loss_sum: 19949.3138  accuracy: 0.8335  precision: 0.8158  recall: 0.8585  f1_score: 0.8366  roc_auc_score: 0.9165
+valid  loss_sum: 2983.9308  accuracy: 0.8344  precision: 0.7903  recall: 0.9118  f1_score: 0.8467  roc_auc_score: 0.9125
+test  loss_sum: 6067.5171  accuracy: 0.8320  precision: 0.7877  recall: 0.9183  f1_score: 0.8480  roc_auc_score: 0.9077
+
+epoch 9:
+train  loss_sum: 19692.6244  accuracy: 0.8369  precision: 0.8142  recall: 0.8694  f1_score: 0.8409  roc_auc_score: 0.9186
+valid  loss_sum: 2956.3371  accuracy: 0.8424  precision: 0.8719  recall: 0.8039  f1_score: 0.8365  roc_auc_score: 0.9261
+test  loss_sum: 5892.8432  accuracy: 0.8443  precision: 0.8713  recall: 0.8153  f1_score: 0.8424  roc_auc_score: 0.9284
+
+epoch 10:
+train  loss_sum: 19621.1099  accuracy: 0.8394  precision: 0.8188  recall: 0.8686  f1_score: 0.8429  roc_auc_score: 0.9191
+valid  loss_sum: 2815.2377  accuracy: 0.8460  precision: 0.8465  recall: 0.8463  f1_score: 0.8464  roc_auc_score: 0.9243
+test  loss_sum: 5641.7490  accuracy: 0.8429  precision: 0.8437  recall: 0.8494  f1_score: 0.8466  roc_auc_score: 0.9248
+
+epoch 11:
+train  loss_sum: 19799.0058  accuracy: 0.8387  precision: 0.8213  recall: 0.8625  f1_score: 0.8414  roc_auc_score: 0.9181
+valid  loss_sum: 2902.8315  accuracy: 0.8416  precision: 0.8582  recall: 0.8195  f1_score: 0.8384  roc_auc_score: 0.9270
+test  loss_sum: 5827.9538  accuracy: 0.8432  precision: 0.8614  recall: 0.8257  f1_score: 0.8432  roc_auc_score: 0.9285
+
+epoch 12:
+train  loss_sum: 19367.9893  accuracy: 0.8415  precision: 0.8217  recall: 0.8696  f1_score: 0.8449  roc_auc_score: 0.9218
+valid  loss_sum: 2812.9126  accuracy: 0.8488  precision: 0.8190  recall: 0.8968  f1_score: 0.8561  roc_auc_score: 0.9215
+test  loss_sum: 5709.9719  accuracy: 0.8431  precision: 0.8134  recall: 0.8986  f1_score: 0.8539  roc_auc_score: 0.9183
+
+epoch 13:
+train  loss_sum: 18745.1309  accuracy: 0.8482  precision: 0.8282  recall: 0.8757  f1_score: 0.8513  roc_auc_score: 0.9275
+valid  loss_sum: 2716.9421  accuracy: 0.8563  precision: 0.8638  recall: 0.8470  f1_score: 0.8554  roc_auc_score: 0.9314
+test  loss_sum: 5408.0413  accuracy: 0.8532  precision: 0.8611  recall: 0.8493  f1_score: 0.8551  roc_auc_score: 0.9328
+
+epoch 14:
+train  loss_sum: 18391.9597  accuracy: 0.8523  precision: 0.8352  recall: 0.8750  f1_score: 0.8547  roc_auc_score: 0.9303
+valid  loss_sum: 2691.1243  accuracy: 0.8639  precision: 0.8592  recall: 0.8715  f1_score: 0.8653  roc_auc_score: 0.9334
+test  loss_sum: 5354.3205  accuracy: 0.8641  precision: 0.8587  recall: 0.8782  f1_score: 0.8684  roc_auc_score: 0.9354
+
+epoch 15:
+train  loss_sum: 18008.8988  accuracy: 0.8577  precision: 0.8384  recall: 0.8837  f1_score: 0.8604  roc_auc_score: 0.9334
+valid  loss_sum: 2621.7771  accuracy: 0.8614  precision: 0.8352  recall: 0.9016  f1_score: 0.8671  roc_auc_score: 0.9334
+test  loss_sum: 5251.1027  accuracy: 0.8607  precision: 0.8365  recall: 0.9035  f1_score: 0.8687  roc_auc_score: 0.9332
+
+epoch 16:
+train  loss_sum: 17603.5959  accuracy: 0.8623  precision: 0.8433  recall: 0.8870  f1_score: 0.8646  roc_auc_score: 0.9368
+valid  loss_sum: 2619.8595  accuracy: 0.8617  precision: 0.8627  recall: 0.8613  f1_score: 0.8620  roc_auc_score: 0.9358
+test  loss_sum: 5229.4639  accuracy: 0.8602  precision: 0.8625  recall: 0.8637  f1_score: 0.8631  roc_auc_score: 0.9374
+
+epoch 17:
+train  loss_sum: 17275.3662  accuracy: 0.8657  precision: 0.8468  recall: 0.8900  f1_score: 0.8678  roc_auc_score: 0.9392
+valid  loss_sum: 2577.2757  accuracy: 0.8683  precision: 0.8413  recall: 0.9089  f1_score: 0.8738  roc_auc_score: 0.9363
+test  loss_sum: 5079.0045  accuracy: 0.8683  precision: 0.8392  recall: 0.9177  f1_score: 0.8767  roc_auc_score: 0.9378
+
+epoch 18:
+train  loss_sum: 17276.2774  accuracy: 0.8656  precision: 0.8450  recall: 0.8925  f1_score: 0.8681  roc_auc_score: 0.9389
+valid  loss_sum: 2482.9054  accuracy: 0.8742  precision: 0.8614  recall: 0.8928  f1_score: 0.8768  roc_auc_score: 0.9406
+test  loss_sum: 4969.2265  accuracy: 0.8730  precision: 0.8627  recall: 0.8934  f1_score: 0.8778  roc_auc_score: 0.9414
+
+epoch 19:
+train  loss_sum: 17096.6324  accuracy: 0.8678  precision: 0.8489  recall: 0.8923  f1_score: 0.8701  roc_auc_score: 0.9403
+valid  loss_sum: 2591.5130  accuracy: 0.8614  precision: 0.8099  recall: 0.9457  f1_score: 0.8726  roc_auc_score: 0.9363
+test  loss_sum: 5243.3920  accuracy: 0.8588  precision: 0.8105  recall: 0.9438  f1_score: 0.8721  roc_auc_score: 0.9333
+
+epoch 20:
+train  loss_sum: 16552.2979  accuracy: 0.8727  precision: 0.8520  recall: 0.8998  f1_score: 0.8752  roc_auc_score: 0.9443
+valid  loss_sum: 2476.2982  accuracy: 0.8699  precision: 0.8436  recall: 0.9092  f1_score: 0.8751  roc_auc_score: 0.9403
+test  loss_sum: 4935.0040  accuracy: 0.8708  precision: 0.8459  recall: 0.9131  f1_score: 0.8782  roc_auc_score: 0.9407
+
+epoch 21:
+train  loss_sum: 16479.5121  accuracy: 0.8738  precision: 0.8511  recall: 0.9038  f1_score: 0.8766  roc_auc_score: 0.9446
+valid  loss_sum: 2376.7792  accuracy: 0.8776  precision: 0.8461  recall: 0.9241  f1_score: 0.8834  roc_auc_score: 0.9451
+test  loss_sum: 4736.4133  accuracy: 0.8803  precision: 0.8516  recall: 0.9270  f1_score: 0.8877  roc_auc_score: 0.9460
+
+epoch 22:
+train  loss_sum: 16610.2061  accuracy: 0.8732  precision: 0.8519  recall: 0.9011  f1_score: 0.8758  roc_auc_score: 0.9435
+valid  loss_sum: 2382.0035  accuracy: 0.8781  precision: 0.8657  recall: 0.8959  f1_score: 0.8806  roc_auc_score: 0.9456
+test  loss_sum: 4723.7757  accuracy: 0.8796  precision: 0.8687  recall: 0.9001  f1_score: 0.8842  roc_auc_score: 0.9467
+
+epoch 23:
+train  loss_sum: 15933.8364  accuracy: 0.8790  precision: 0.8575  recall: 0.9068  f1_score: 0.8815  roc_auc_score: 0.9484
+valid  loss_sum: 2350.9244  accuracy: 0.8799  precision: 0.8658  recall: 0.8999  f1_score: 0.8826  roc_auc_score: 0.9468
+test  loss_sum: 4607.4762  accuracy: 0.8833  precision: 0.8723  recall: 0.9036  f1_score: 0.8877  roc_auc_score: 0.9495
+
+epoch 24:
+train  loss_sum: 15789.0745  accuracy: 0.8787  precision: 0.8580  recall: 0.9057  f1_score: 0.8812  roc_auc_score: 0.9493
+valid  loss_sum: 2295.2901  accuracy: 0.8811  precision: 0.8484  recall: 0.9289  f1_score: 0.8868  roc_auc_score: 0.9488
+test  loss_sum: 4517.2060  accuracy: 0.8847  precision: 0.8551  recall: 0.9322  f1_score: 0.8919  roc_auc_score: 0.9505
+
+epoch 25:
+train  loss_sum: 15498.3573  accuracy: 0.8831  precision: 0.8601  recall: 0.9129  f1_score: 0.8857  roc_auc_score: 0.9512
+valid  loss_sum: 2416.9557  accuracy: 0.8724  precision: 0.8897  recall: 0.8511  f1_score: 0.8700  roc_auc_score: 0.9513
+test  loss_sum: 4916.6202  accuracy: 0.8737  precision: 0.8993  recall: 0.8473  f1_score: 0.8726  roc_auc_score: 0.9517
+
+epoch 26:
+train  loss_sum: 15381.5137  accuracy: 0.8843  precision: 0.8628  recall: 0.9119  f1_score: 0.8866  roc_auc_score: 0.9516
+valid  loss_sum: 2256.8904  accuracy: 0.8827  precision: 0.8777  recall: 0.8902  f1_score: 0.8839  roc_auc_score: 0.9528
+test  loss_sum: 4511.0174  accuracy: 0.8890  precision: 0.8898  recall: 0.8931  f1_score: 0.8915  roc_auc_score: 0.9541
+
+epoch 27:
+train  loss_sum: 15272.5459  accuracy: 0.8864  precision: 0.8650  recall: 0.9138  f1_score: 0.8887  roc_auc_score: 0.9524
+valid  loss_sum: 2283.8905  accuracy: 0.8851  precision: 0.8610  recall: 0.9194  f1_score: 0.8892  roc_auc_score: 0.9499
+test  loss_sum: 4457.8651  accuracy: 0.8886  precision: 0.8671  recall: 0.9231  f1_score: 0.8942  roc_auc_score: 0.9521
+
+epoch 28:
+train  loss_sum: 15412.2635  accuracy: 0.8838  precision: 0.8628  recall: 0.9105  f1_score: 0.8860  roc_auc_score: 0.9516
+valid  loss_sum: 2279.5378  accuracy: 0.8825  precision: 0.8618  recall: 0.9120  f1_score: 0.8862  roc_auc_score: 0.9493
+test  loss_sum: 4504.0686  accuracy: 0.8874  precision: 0.8716  recall: 0.9141  f1_score: 0.8923  roc_auc_score: 0.9510
+
+epoch 29:
+train  loss_sum: 14927.4832  accuracy: 0.8902  precision: 0.8688  recall: 0.9172  f1_score: 0.8923  roc_auc_score: 0.9548
+valid  loss_sum: 2225.7868  accuracy: 0.8873  precision: 0.8646  recall: 0.9191  f1_score: 0.8910  roc_auc_score: 0.9528
+test  loss_sum: 4428.3087  accuracy: 0.8930  precision: 0.8774  recall: 0.9188  f1_score: 0.8976  roc_auc_score: 0.9533
+
+epoch 30:
+train  loss_sum: 15338.9067  accuracy: 0.8834  precision: 0.8628  recall: 0.9098  f1_score: 0.8857  roc_auc_score: 0.9519
+valid  loss_sum: 2230.4064  accuracy: 0.8846  precision: 0.8621  recall: 0.9165  f1_score: 0.8885  roc_auc_score: 0.9517
+test  loss_sum: 4398.8638  accuracy: 0.8891  precision: 0.8704  recall: 0.9197  f1_score: 0.8944  roc_auc_score: 0.9531
+
+epoch 31:
+train  loss_sum: 14761.6175  accuracy: 0.8910  precision: 0.8700  recall: 0.9174  f1_score: 0.8930  roc_auc_score: 0.9556
+valid  loss_sum: 2170.0079  accuracy: 0.8890  precision: 0.8673  recall: 0.9194  f1_score: 0.8926  roc_auc_score: 0.9543
+test  loss_sum: 4279.7552  accuracy: 0.8937  precision: 0.8781  recall: 0.9192  f1_score: 0.8982  roc_auc_score: 0.9559
+
+epoch 32:
+train  loss_sum: 14484.2260  accuracy: 0.8918  precision: 0.8699  recall: 0.9191  f1_score: 0.8939  roc_auc_score: 0.9572
+valid  loss_sum: 2195.3143  accuracy: 0.8845  precision: 0.8844  recall: 0.8855  f1_score: 0.8849  roc_auc_score: 0.9559
+test  loss_sum: 4356.6235  accuracy: 0.8911  precision: 0.8955  recall: 0.8906  f1_score: 0.8930  roc_auc_score: 0.9572
+
+epoch 33:
+train  loss_sum: 14472.4231  accuracy: 0.8922  precision: 0.8732  recall: 0.9158  f1_score: 0.8940  roc_auc_score: 0.9573
+valid  loss_sum: 2205.6819  accuracy: 0.8886  precision: 0.8489  recall: 0.9462  f1_score: 0.8949  roc_auc_score: 0.9532
+test  loss_sum: 4507.0267  accuracy: 0.8888  precision: 0.8556  recall: 0.9408  f1_score: 0.8962  roc_auc_score: 0.9497
+
+epoch 34:
+train  loss_sum: 14172.2482  accuracy: 0.8946  precision: 0.8736  recall: 0.9205  f1_score: 0.8965  roc_auc_score: 0.9592
+valid  loss_sum: 2181.3214  accuracy: 0.8911  precision: 0.8839  recall: 0.9011  f1_score: 0.8924  roc_auc_score: 0.9557
+test  loss_sum: 4345.4615  accuracy: 0.8931  precision: 0.8926  recall: 0.8987  f1_score: 0.8957  roc_auc_score: 0.9569
+
+epoch 35:
+train  loss_sum: 14348.8191  accuracy: 0.8949  precision: 0.8745  recall: 0.9199  f1_score: 0.8966  roc_auc_score: 0.9580
+valid  loss_sum: 2201.8332  accuracy: 0.8849  precision: 0.8944  recall: 0.8736  f1_score: 0.8839  roc_auc_score: 0.9570
+test  loss_sum: 4417.4161  accuracy: 0.8895  precision: 0.9047  recall: 0.8758  f1_score: 0.8900  roc_auc_score: 0.9579
+
+epoch 36:
+train  loss_sum: 14211.5428  accuracy: 0.8955  precision: 0.8760  recall: 0.9195  f1_score: 0.8972  roc_auc_score: 0.9588
+valid  loss_sum: 2171.6465  accuracy: 0.8911  precision: 0.8834  recall: 0.9018  f1_score: 0.8925  roc_auc_score: 0.9569
+test  loss_sum: 4384.3368  accuracy: 0.8941  precision: 0.8957  recall: 0.8969  f1_score: 0.8963  roc_auc_score: 0.9565
+
+epoch 37:
+train  loss_sum: 14060.5157  accuracy: 0.8958  precision: 0.8754  recall: 0.9209  f1_score: 0.8976  roc_auc_score: 0.9597
+valid  loss_sum: 2099.9210  accuracy: 0.8969  precision: 0.8842  recall: 0.9142  f1_score: 0.8989  roc_auc_score: 0.9579
+test  loss_sum: 4177.7694  accuracy: 0.8991  precision: 0.8932  recall: 0.9112  f1_score: 0.9021  roc_auc_score: 0.9585
+
+epoch 38:
+train  loss_sum: 13950.9874  accuracy: 0.8977  precision: 0.8782  recall: 0.9219  f1_score: 0.8995  roc_auc_score: 0.9603
+valid  loss_sum: 2086.5229  accuracy: 0.8943  precision: 0.8646  recall: 0.9357  f1_score: 0.8988  roc_auc_score: 0.9575
+test  loss_sum: 4201.1968  accuracy: 0.8982  precision: 0.8730  recall: 0.9370  f1_score: 0.9038  roc_auc_score: 0.9560
+
+epoch 39:
+train  loss_sum: 13767.1696  accuracy: 0.8993  precision: 0.8790  recall: 0.9243  f1_score: 0.9011  roc_auc_score: 0.9612
+valid  loss_sum: 2127.0526  accuracy: 0.8949  precision: 0.8613  recall: 0.9421  f1_score: 0.8999  roc_auc_score: 0.9567
+test  loss_sum: 4280.9234  accuracy: 0.8957  precision: 0.8675  recall: 0.9391  f1_score: 0.9018  roc_auc_score: 0.9554
+
+epoch 40:
+train  loss_sum: 13820.7994  accuracy: 0.8988  precision: 0.8778  recall: 0.9249  f1_score: 0.9007  roc_auc_score: 0.9611
+valid  loss_sum: 2190.2203  accuracy: 0.8864  precision: 0.8917  recall: 0.8805  f1_score: 0.8861  roc_auc_score: 0.9566
+test  loss_sum: 4363.5292  accuracy: 0.8908  precision: 0.9008  recall: 0.8833  f1_score: 0.8920  roc_auc_score: 0.9570
+
+epoch 41:
+train  loss_sum: 13797.5264  accuracy: 0.8989  precision: 0.8783  recall: 0.9241  f1_score: 0.9006  roc_auc_score: 0.9612
+valid  loss_sum: 2087.4948  accuracy: 0.8978  precision: 0.8832  recall: 0.9177  f1_score: 0.9001  roc_auc_score: 0.9581
+test  loss_sum: 4144.4857  accuracy: 0.8996  precision: 0.8891  recall: 0.9176  f1_score: 0.9031  roc_auc_score: 0.9588
+
+epoch 42:
+train  loss_sum: 13549.8712  accuracy: 0.9015  precision: 0.8813  recall: 0.9265  f1_score: 0.9033  roc_auc_score: 0.9626
+valid  loss_sum: 2081.9012  accuracy: 0.8927  precision: 0.8905  recall: 0.8964  f1_score: 0.8934  roc_auc_score: 0.9605
+test  loss_sum: 4203.8559  accuracy: 0.8966  precision: 0.9045  recall: 0.8916  f1_score: 0.8980  roc_auc_score: 0.9601
+
+epoch 43:
+train  loss_sum: 13819.6118  accuracy: 0.8982  precision: 0.8785  recall: 0.9223  f1_score: 0.8999  roc_auc_score: 0.9610
+valid  loss_sum: 2059.9929  accuracy: 0.8984  precision: 0.8636  recall: 0.9471  f1_score: 0.9034  roc_auc_score: 0.9594
+test  loss_sum: 4090.7713  accuracy: 0.9021  precision: 0.8715  recall: 0.9478  f1_score: 0.9081  roc_auc_score: 0.9589
+
+epoch 44:
+train  loss_sum: 13456.4505  accuracy: 0.9014  precision: 0.8803  recall: 0.9273  f1_score: 0.9032  roc_auc_score: 0.9629
+valid  loss_sum: 2049.9051  accuracy: 0.8991  precision: 0.8738  recall: 0.9338  f1_score: 0.9028  roc_auc_score: 0.9589
+test  loss_sum: 4067.0901  accuracy: 0.9024  precision: 0.8830  recall: 0.9323  f1_score: 0.9070  roc_auc_score: 0.9594
+
+epoch 45:
+train  loss_sum: 13318.0174  accuracy: 0.9018  precision: 0.8811  recall: 0.9271  f1_score: 0.9036  roc_auc_score: 0.9638
+valid  loss_sum: 2041.0480  accuracy: 0.8953  precision: 0.8737  recall: 0.9251  f1_score: 0.8986  roc_auc_score: 0.9597
+test  loss_sum: 4050.2085  accuracy: 0.9038  precision: 0.8896  recall: 0.9263  f1_score: 0.9076  roc_auc_score: 0.9599
+
+epoch 46:
+train  loss_sum: 13366.1721  accuracy: 0.9025  precision: 0.8837  recall: 0.9250  f1_score: 0.9039  roc_auc_score: 0.9635
+valid  loss_sum: 2046.4689  accuracy: 0.8983  precision: 0.8737  recall: 0.9319  f1_score: 0.9019  roc_auc_score: 0.9589
+test  loss_sum: 4159.5142  accuracy: 0.8987  precision: 0.8834  recall: 0.9234  f1_score: 0.9030  roc_auc_score: 0.9575
+
+epoch 47:
+train  loss_sum: 13349.1800  accuracy: 0.9006  precision: 0.8808  recall: 0.9249  f1_score: 0.9023  roc_auc_score: 0.9636
+valid  loss_sum: 2029.6665  accuracy: 0.8999  precision: 0.8721  recall: 0.9379  f1_score: 0.9038  roc_auc_score: 0.9596
+test  loss_sum: 4121.3183  accuracy: 0.9004  precision: 0.8795  recall: 0.9328  f1_score: 0.9053  roc_auc_score: 0.9579
+
+epoch 48:
+train  loss_sum: 13141.4832  accuracy: 0.9040  precision: 0.8842  recall: 0.9282  f1_score: 0.9057  roc_auc_score: 0.9646
+valid  loss_sum: 2024.0312  accuracy: 0.8987  precision: 0.8613  recall: 0.9512  f1_score: 0.9040  roc_auc_score: 0.9604
+test  loss_sum: 4012.0659  accuracy: 0.9050  precision: 0.8735  recall: 0.9518  f1_score: 0.9109  roc_auc_score: 0.9597
+
+epoch 49:
+train  loss_sum: 13260.0836  accuracy: 0.9027  precision: 0.8832  recall: 0.9267  f1_score: 0.9044  roc_auc_score: 0.9640
+valid  loss_sum: 2058.5344  accuracy: 0.8972  precision: 0.8615  recall: 0.9474  f1_score: 0.9024  roc_auc_score: 0.9595
+test  loss_sum: 4167.9575  accuracy: 0.9003  precision: 0.8680  recall: 0.9488  f1_score: 0.9066  roc_auc_score: 0.9573
+
+epoch 50:
+train  loss_sum: 13071.6496  accuracy: 0.9041  precision: 0.8838  recall: 0.9286  f1_score: 0.9056  roc_auc_score: 0.9650
+valid  loss_sum: 2052.0473  accuracy: 0.8995  precision: 0.8732  recall: 0.9355  f1_score: 0.9033  roc_auc_score: 0.9598
+test  loss_sum: 4004.3750  accuracy: 0.9055  precision: 0.8839  recall: 0.9380  f1_score: 0.9102  roc_auc_score: 0.9610
+
+epoch 51:
+train  loss_sum: 12978.4882  accuracy: 0.9050  precision: 0.8854  recall: 0.9286  f1_score: 0.9065  roc_auc_score: 0.9655
+valid  loss_sum: 2117.4687  accuracy: 0.8918  precision: 0.8855  recall: 0.9006  f1_score: 0.8930  roc_auc_score: 0.9582
+test  loss_sum: 4270.0462  accuracy: 0.8930  precision: 0.8959  recall: 0.8942  f1_score: 0.8950  roc_auc_score: 0.9579
+
+epoch 52:
+train  loss_sum: 13007.4951  accuracy: 0.9053  precision: 0.8856  recall: 0.9297  f1_score: 0.9071  roc_auc_score: 0.9654
+valid  loss_sum: 1976.2765  accuracy: 0.9010  precision: 0.8698  recall: 0.9440  f1_score: 0.9054  roc_auc_score: 0.9616
+test  loss_sum: 3957.7988  accuracy: 0.9070  precision: 0.8839  recall: 0.9414  f1_score: 0.9117  roc_auc_score: 0.9606
+
+epoch 53:
+train  loss_sum: 12943.1609  accuracy: 0.9054  precision: 0.8852  recall: 0.9301  f1_score: 0.9071  roc_auc_score: 0.9656
+valid  loss_sum: 2010.2991  accuracy: 0.8965  precision: 0.8784  recall: 0.9213  f1_score: 0.8993  roc_auc_score: 0.9610
+test  loss_sum: 3992.5723  accuracy: 0.9023  precision: 0.8933  recall: 0.9183  f1_score: 0.9056  roc_auc_score: 0.9613
+
+epoch 54:
+train  loss_sum: 13189.1915  accuracy: 0.9031  precision: 0.8828  recall: 0.9280  f1_score: 0.9048  roc_auc_score: 0.9643
+valid  loss_sum: 2077.6955  accuracy: 0.8951  precision: 0.8992  recall: 0.8907  f1_score: 0.8949  roc_auc_score: 0.9617
+test  loss_sum: 4169.6558  accuracy: 0.8978  precision: 0.9100  recall: 0.8874  f1_score: 0.8986  roc_auc_score: 0.9617
+
+epoch 55:
+train  loss_sum: 12679.5487  accuracy: 0.9077  precision: 0.8869  recall: 0.9331  f1_score: 0.9094  roc_auc_score: 0.9671
+valid  loss_sum: 2014.8330  accuracy: 0.8981  precision: 0.8946  recall: 0.9032  f1_score: 0.8989  roc_auc_score: 0.9620
+test  loss_sum: 4051.3720  accuracy: 0.9019  precision: 0.9057  recall: 0.9016  f1_score: 0.9036  roc_auc_score: 0.9621
+
+epoch 56:
+train  loss_sum: 12671.6965  accuracy: 0.9077  precision: 0.8886  recall: 0.9308  f1_score: 0.9092  roc_auc_score: 0.9670
+valid  loss_sum: 1976.9561  accuracy: 0.9028  precision: 0.8718  recall: 0.9452  f1_score: 0.9070  roc_auc_score: 0.9618
+test  loss_sum: 3917.1102  accuracy: 0.9075  precision: 0.8834  recall: 0.9431  f1_score: 0.9123  roc_auc_score: 0.9615
+
+epoch 57:
+train  loss_sum: 12718.7393  accuracy: 0.9069  precision: 0.8872  recall: 0.9308  f1_score: 0.9085  roc_auc_score: 0.9667
+valid  loss_sum: 1974.4455  accuracy: 0.9002  precision: 0.8648  recall: 0.9495  f1_score: 0.9052  roc_auc_score: 0.9622
+test  loss_sum: 3949.2098  accuracy: 0.9057  precision: 0.8763  recall: 0.9492  f1_score: 0.9113  roc_auc_score: 0.9611
+
+epoch 58:
+train  loss_sum: 12823.2188  accuracy: 0.9061  precision: 0.8848  recall: 0.9321  f1_score: 0.9078  roc_auc_score: 0.9663
+valid  loss_sum: 1987.2552  accuracy: 0.8974  precision: 0.8713  recall: 0.9331  f1_score: 0.9012  roc_auc_score: 0.9613
+test  loss_sum: 3941.6903  accuracy: 0.9076  precision: 0.8890  recall: 0.9357  f1_score: 0.9118  roc_auc_score: 0.9618
+
+epoch 59:
+train  loss_sum: 12800.3265  accuracy: 0.9064  precision: 0.8862  recall: 0.9309  f1_score: 0.9080  roc_auc_score: 0.9663
+valid  loss_sum: 1966.5374  accuracy: 0.9031  precision: 0.8719  recall: 0.9457  f1_score: 0.9073  roc_auc_score: 0.9622
+test  loss_sum: 3892.7479  accuracy: 0.9085  precision: 0.8831  recall: 0.9459  f1_score: 0.9135  roc_auc_score: 0.9620
+
+epoch 60:
+train  loss_sum: 12769.1347  accuracy: 0.9059  precision: 0.8860  recall: 0.9300  f1_score: 0.9075  roc_auc_score: 0.9666
+valid  loss_sum: 2046.3234  accuracy: 0.8981  precision: 0.8515  recall: 0.9651  f1_score: 0.9047  roc_auc_score: 0.9608
+test  loss_sum: 4007.6531  accuracy: 0.9069  precision: 0.8683  recall: 0.9639  f1_score: 0.9136  roc_auc_score: 0.9609
+
+epoch 61:
+train  loss_sum: 12609.4019  accuracy: 0.9065  precision: 0.8857  recall: 0.9321  f1_score: 0.9083  roc_auc_score: 0.9673
+valid  loss_sum: 1926.5283  accuracy: 0.9045  precision: 0.8834  recall: 0.9327  f1_score: 0.9074  roc_auc_score: 0.9642
+test  loss_sum: 3900.9662  accuracy: 0.9098  precision: 0.8967  recall: 0.9305  f1_score: 0.9133  roc_auc_score: 0.9629
+
+epoch 62:
+train  loss_sum: 12286.0061  accuracy: 0.9105  precision: 0.8904  recall: 0.9350  f1_score: 0.9121  roc_auc_score: 0.9690
+valid  loss_sum: 2127.3293  accuracy: 0.9002  precision: 0.8661  recall: 0.9476  f1_score: 0.9050  roc_auc_score: 0.9584
+test  loss_sum: 4132.3563  accuracy: 0.9044  precision: 0.8768  recall: 0.9455  f1_score: 0.9098  roc_auc_score: 0.9598
+
+epoch 63:
+train  loss_sum: 12460.3571  accuracy: 0.9091  precision: 0.8885  recall: 0.9339  f1_score: 0.9106  roc_auc_score: 0.9680
+valid  loss_sum: 1982.3881  accuracy: 0.9003  precision: 0.9047  recall: 0.8957  f1_score: 0.9001  roc_auc_score: 0.9643
+test  loss_sum: 3965.0492  accuracy: 0.9026  precision: 0.9107  recall: 0.8972  f1_score: 0.9039  roc_auc_score: 0.9649
+
+epoch 64:
+train  loss_sum: 12293.0291  accuracy: 0.9096  precision: 0.8886  recall: 0.9349  f1_score: 0.9112  roc_auc_score: 0.9689
+valid  loss_sum: 1952.8691  accuracy: 0.9041  precision: 0.8967  recall: 0.9142  f1_score: 0.9054  roc_auc_score: 0.9637
+test  loss_sum: 3856.2573  accuracy: 0.9066  precision: 0.9036  recall: 0.9145  f1_score: 0.9090  roc_auc_score: 0.9648
+
+epoch 65:
+train  loss_sum: 12266.0231  accuracy: 0.9103  precision: 0.8888  recall: 0.9365  f1_score: 0.9120  roc_auc_score: 0.9691
+valid  loss_sum: 1927.7032  accuracy: 0.9019  precision: 0.8897  recall: 0.9182  f1_score: 0.9037  roc_auc_score: 0.9642
+test  loss_sum: 3846.7281  accuracy: 0.9067  precision: 0.9016  recall: 0.9174  f1_score: 0.9094  roc_auc_score: 0.9644
+
+epoch 66:
+train  loss_sum: 12265.0766  accuracy: 0.9092  precision: 0.8895  recall: 0.9329  f1_score: 0.9107  roc_auc_score: 0.9691
+valid  loss_sum: 2054.2389  accuracy: 0.8976  precision: 0.8525  recall: 0.9623  f1_score: 0.9041  roc_auc_score: 0.9599
+test  loss_sum: 4068.8883  accuracy: 0.9031  precision: 0.8681  recall: 0.9554  f1_score: 0.9096  roc_auc_score: 0.9595
+
+epoch 67:
+train  loss_sum: 12151.9706  accuracy: 0.9107  precision: 0.8901  recall: 0.9356  f1_score: 0.9123  roc_auc_score: 0.9696
+valid  loss_sum: 1983.4073  accuracy: 0.9059  precision: 0.8780  recall: 0.9436  f1_score: 0.9096  roc_auc_score: 0.9625
+test  loss_sum: 3910.7873  accuracy: 0.9099  precision: 0.8903  recall: 0.9392  f1_score: 0.9141  roc_auc_score: 0.9632
+
+epoch 68:
+train  loss_sum: 12196.2089  accuracy: 0.9118  precision: 0.8912  recall: 0.9368  f1_score: 0.9134  roc_auc_score: 0.9693
+valid  loss_sum: 2019.5974  accuracy: 0.8962  precision: 0.8998  recall: 0.8923  f1_score: 0.8961  roc_auc_score: 0.9634
+test  loss_sum: 4107.5781  accuracy: 0.8980  precision: 0.9102  recall: 0.8878  f1_score: 0.8988  roc_auc_score: 0.9632
+
+epoch 69:
+train  loss_sum: 12016.8769  accuracy: 0.9128  precision: 0.8921  recall: 0.9377  f1_score: 0.9143  roc_auc_score: 0.9702
+valid  loss_sum: 1952.2822  accuracy: 0.9057  precision: 0.8956  recall: 0.9191  f1_score: 0.9072  roc_auc_score: 0.9637
+test  loss_sum: 3926.1715  accuracy: 0.9067  precision: 0.9039  recall: 0.9143  f1_score: 0.9091  roc_auc_score: 0.9638
+
+epoch 70:
+train  loss_sum: 11880.9745  accuracy: 0.9138  precision: 0.8928  recall: 0.9387  f1_score: 0.9152  roc_auc_score: 0.9710
+valid  loss_sum: 1924.9989  accuracy: 0.9053  precision: 0.8775  recall: 0.9429  f1_score: 0.9090  roc_auc_score: 0.9637
+test  loss_sum: 3837.6284  accuracy: 0.9101  precision: 0.8885  recall: 0.9421  f1_score: 0.9145  roc_auc_score: 0.9635
+
+epoch 71:
+train  loss_sum: 12145.9015  accuracy: 0.9118  precision: 0.8902  recall: 0.9376  f1_score: 0.9133  roc_auc_score: 0.9696
+valid  loss_sum: 1921.7556  accuracy: 0.9020  precision: 0.8801  recall: 0.9315  f1_score: 0.9051  roc_auc_score: 0.9641
+test  loss_sum: 3827.7624  accuracy: 0.9085  precision: 0.8955  recall: 0.9291  f1_score: 0.9120  roc_auc_score: 0.9643
+
+epoch 72:
+train  loss_sum: 11999.0047  accuracy: 0.9130  precision: 0.8919  recall: 0.9383  f1_score: 0.9145  roc_auc_score: 0.9704
+valid  loss_sum: 1888.2907  accuracy: 0.9079  precision: 0.8837  recall: 0.9402  f1_score: 0.9111  roc_auc_score: 0.9655
+test  loss_sum: 3751.9496  accuracy: 0.9123  precision: 0.8965  recall: 0.9364  f1_score: 0.9160  roc_auc_score: 0.9652
+
+epoch 73:
+train  loss_sum: 11856.5213  accuracy: 0.9136  precision: 0.8919  recall: 0.9398  f1_score: 0.9152  roc_auc_score: 0.9710
+valid  loss_sum: 1943.1420  accuracy: 0.9001  precision: 0.8835  recall: 0.9225  f1_score: 0.9026  roc_auc_score: 0.9637
+test  loss_sum: 3935.6222  accuracy: 0.9047  precision: 0.9001  recall: 0.9147  f1_score: 0.9073  roc_auc_score: 0.9631
+
+epoch 74:
+train  loss_sum: 11715.9085  accuracy: 0.9139  precision: 0.8935  recall: 0.9384  f1_score: 0.9154  roc_auc_score: 0.9718
+valid  loss_sum: 1913.3868  accuracy: 0.9056  precision: 0.8849  recall: 0.9331  f1_score: 0.9084  roc_auc_score: 0.9649
+test  loss_sum: 3783.3547  accuracy: 0.9110  precision: 0.8960  recall: 0.9340  f1_score: 0.9146  roc_auc_score: 0.9651
+
+epoch 75:
+train  loss_sum: 11644.3873  accuracy: 0.9164  precision: 0.8941  recall: 0.9433  f1_score: 0.9180  roc_auc_score: 0.9722
+valid  loss_sum: 1974.5589  accuracy: 0.9005  precision: 0.9084  recall: 0.8914  f1_score: 0.8998  roc_auc_score: 0.9651
+test  loss_sum: 3930.7569  accuracy: 0.9026  precision: 0.9132  recall: 0.8942  f1_score: 0.9036  roc_auc_score: 0.9659
+
+epoch 76:
+train  loss_sum: 11689.4003  accuracy: 0.9152  precision: 0.8950  recall: 0.9392  f1_score: 0.9166  roc_auc_score: 0.9718
+valid  loss_sum: 1955.4946  accuracy: 0.9006  precision: 0.8988  recall: 0.9035  f1_score: 0.9011  roc_auc_score: 0.9644
+test  loss_sum: 3886.4423  accuracy: 0.9072  precision: 0.9079  recall: 0.9106  f1_score: 0.9092  roc_auc_score: 0.9653
+
+epoch 77:
+train  loss_sum: 11514.2905  accuracy: 0.9162  precision: 0.8945  recall: 0.9422  f1_score: 0.9177  roc_auc_score: 0.9728
+valid  loss_sum: 1952.8500  accuracy: 0.9034  precision: 0.9047  recall: 0.9025  f1_score: 0.9036  roc_auc_score: 0.9650
+test  loss_sum: 3986.2179  accuracy: 0.9043  precision: 0.9101  recall: 0.9014  f1_score: 0.9057  roc_auc_score: 0.9650
+
+epoch 78:
+train  loss_sum: 11811.6119  accuracy: 0.9147  precision: 0.8937  recall: 0.9400  f1_score: 0.9163  roc_auc_score: 0.9713
+valid  loss_sum: 1965.3250  accuracy: 0.8996  precision: 0.8912  recall: 0.9111  f1_score: 0.9010  roc_auc_score: 0.9636
+test  loss_sum: 3947.6977  accuracy: 0.9051  precision: 0.9034  recall: 0.9114  f1_score: 0.9074  roc_auc_score: 0.9638
+
+epoch 79:
+train  loss_sum: 11647.2655  accuracy: 0.9155  precision: 0.8954  recall: 0.9394  f1_score: 0.9169  roc_auc_score: 0.9721
+valid  loss_sum: 1934.2632  accuracy: 0.9018  precision: 0.8729  recall: 0.9412  f1_score: 0.9058  roc_auc_score: 0.9637
+test  loss_sum: 3794.5048  accuracy: 0.9106  precision: 0.8886  recall: 0.9429  f1_score: 0.9150  roc_auc_score: 0.9639
+
+epoch 80:
+train  loss_sum: 11399.1434  accuracy: 0.9170  precision: 0.8953  recall: 0.9429  f1_score: 0.9185  roc_auc_score: 0.9732
+valid  loss_sum: 2030.8580  accuracy: 0.9015  precision: 0.8579  recall: 0.9632  f1_score: 0.9075  roc_auc_score: 0.9629
+test  loss_sum: 3954.1693  accuracy: 0.9096  precision: 0.8734  recall: 0.9624  f1_score: 0.9157  roc_auc_score: 0.9635
+
+epoch 81:
+train  loss_sum: 11453.0155  accuracy: 0.9167  precision: 0.8954  recall: 0.9422  f1_score: 0.9182  roc_auc_score: 0.9730
+valid  loss_sum: 1952.5149  accuracy: 0.9012  precision: 0.8897  recall: 0.9165  f1_score: 0.9029  roc_auc_score: 0.9641
+test  loss_sum: 3890.4952  accuracy: 0.9060  precision: 0.9030  recall: 0.9141  f1_score: 0.9085  roc_auc_score: 0.9643
+
+epoch 82:
+train  loss_sum: 11667.2096  accuracy: 0.9142  precision: 0.8938  recall: 0.9386  f1_score: 0.9156  roc_auc_score: 0.9721
+valid  loss_sum: 1937.1430  accuracy: 0.9081  precision: 0.8851  recall: 0.9386  f1_score: 0.9110  roc_auc_score: 0.9639
+test  loss_sum: 3766.9187  accuracy: 0.9115  precision: 0.8958  recall: 0.9354  f1_score: 0.9152  roc_auc_score: 0.9658
+
+epoch 83:
+train  loss_sum: 11227.1047  accuracy: 0.9182  precision: 0.8971  recall: 0.9433  f1_score: 0.9196  roc_auc_score: 0.9741
+valid  loss_sum: 1903.5964  accuracy: 0.9071  precision: 0.8808  recall: 0.9424  f1_score: 0.9105  roc_auc_score: 0.9646
+test  loss_sum: 3787.8670  accuracy: 0.9104  precision: 0.8926  recall: 0.9372  f1_score: 0.9143  roc_auc_score: 0.9642
+
+epoch 84:
+train  loss_sum: 11246.0887  accuracy: 0.9176  precision: 0.8966  recall: 0.9426  f1_score: 0.9190  roc_auc_score: 0.9740
+valid  loss_sum: 1920.2386  accuracy: 0.9058  precision: 0.8743  recall: 0.9485  f1_score: 0.9099  roc_auc_score: 0.9646
+test  loss_sum: 3880.4173  accuracy: 0.9089  precision: 0.8845  recall: 0.9449  f1_score: 0.9137  roc_auc_score: 0.9632
+
+epoch 85:
+train  loss_sum: 11182.2045  accuracy: 0.9193  precision: 0.8982  recall: 0.9448  f1_score: 0.9209  roc_auc_score: 0.9742
+valid  loss_sum: 1937.2269  accuracy: 0.9046  precision: 0.8998  recall: 0.9113  f1_score: 0.9055  roc_auc_score: 0.9656
+test  loss_sum: 4016.9718  accuracy: 0.9015  precision: 0.9056  recall: 0.9009  f1_score: 0.9033  roc_auc_score: 0.9642
+
+epoch 86:
+train  loss_sum: 11218.7538  accuracy: 0.9182  precision: 0.8976  recall: 0.9428  f1_score: 0.9197  roc_auc_score: 0.9740
+valid  loss_sum: 1879.8867  accuracy: 0.9096  precision: 0.8810  recall: 0.9478  f1_score: 0.9132  roc_auc_score: 0.9667
+test  loss_sum: 3756.0459  accuracy: 0.9133  precision: 0.8922  recall: 0.9442  f1_score: 0.9174  roc_auc_score: 0.9658
+
+epoch 87:
+train  loss_sum: 11040.0365  accuracy: 0.9201  precision: 0.8995  recall: 0.9444  f1_score: 0.9214  roc_auc_score: 0.9749
+valid  loss_sum: 1881.1282  accuracy: 0.9071  precision: 0.9052  recall: 0.9101  f1_score: 0.9077  roc_auc_score: 0.9678
+test  loss_sum: 3829.0214  accuracy: 0.9065  precision: 0.9116  recall: 0.9046  f1_score: 0.9080  roc_auc_score: 0.9672
+
+epoch 88:
+train  loss_sum: 11111.0673  accuracy: 0.9189  precision: 0.8988  recall: 0.9428  f1_score: 0.9203  roc_auc_score: 0.9745
+valid  loss_sum: 1882.7706  accuracy: 0.9065  precision: 0.8709  recall: 0.9552  f1_score: 0.9111  roc_auc_score: 0.9652
+test  loss_sum: 3773.9655  accuracy: 0.9110  precision: 0.8828  recall: 0.9519  f1_score: 0.9161  roc_auc_score: 0.9640
+
+epoch 89:
+train  loss_sum: 10854.8345  accuracy: 0.9208  precision: 0.8996  recall: 0.9460  f1_score: 0.9222  roc_auc_score: 0.9758
+valid  loss_sum: 1940.7996  accuracy: 0.9051  precision: 0.8907  recall: 0.9241  f1_score: 0.9071  roc_auc_score: 0.9646
+test  loss_sum: 3809.6535  accuracy: 0.9104  precision: 0.9028  recall: 0.9238  f1_score: 0.9132  roc_auc_score: 0.9662
+
+epoch 90:
+train  loss_sum: 10935.7582  accuracy: 0.9208  precision: 0.9011  recall: 0.9441  f1_score: 0.9221  roc_auc_score: 0.9755
+valid  loss_sum: 1986.3021  accuracy: 0.9068  precision: 0.8694  recall: 0.9580  f1_score: 0.9116  roc_auc_score: 0.9642
+test  loss_sum: 3890.3973  accuracy: 0.9117  precision: 0.8812  recall: 0.9559  f1_score: 0.9170  roc_auc_score: 0.9645
+
+epoch 91:
+train  loss_sum: 10914.4774  accuracy: 0.9209  precision: 0.9004  recall: 0.9450  f1_score: 0.9222  roc_auc_score: 0.9755
+valid  loss_sum: 1883.1059  accuracy: 0.9079  precision: 0.8698  recall: 0.9602  f1_score: 0.9128  roc_auc_score: 0.9668
+test  loss_sum: 3707.8424  accuracy: 0.9138  precision: 0.8834  recall: 0.9576  f1_score: 0.9190  roc_auc_score: 0.9665
+
+epoch 92:
+train  loss_sum: 10838.0215  accuracy: 0.9203  precision: 0.8991  recall: 0.9455  f1_score: 0.9217  roc_auc_score: 0.9759
+valid  loss_sum: 1939.1614  accuracy: 0.9084  precision: 0.8779  recall: 0.9495  f1_score: 0.9123  roc_auc_score: 0.9645
+test  loss_sum: 3901.1325  accuracy: 0.9071  precision: 0.8839  recall: 0.9416  f1_score: 0.9119  roc_auc_score: 0.9637
+
+epoch 93:
+train  loss_sum: 10824.4885  accuracy: 0.9210  precision: 0.9004  recall: 0.9452  f1_score: 0.9223  roc_auc_score: 0.9759
+valid  loss_sum: 1909.7332  accuracy: 0.9060  precision: 0.8926  recall: 0.9239  f1_score: 0.9079  roc_auc_score: 0.9653
+test  loss_sum: 3892.6348  accuracy: 0.9087  precision: 0.9027  recall: 0.9203  f1_score: 0.9114  roc_auc_score: 0.9643
+
+epoch 94:
+train  loss_sum: 10834.6613  accuracy: 0.9214  precision: 0.9016  recall: 0.9446  f1_score: 0.9226  roc_auc_score: 0.9759
+valid  loss_sum: 1918.9122  accuracy: 0.9045  precision: 0.8865  recall: 0.9284  f1_score: 0.9070  roc_auc_score: 0.9649
+test  loss_sum: 3803.2089  accuracy: 0.9087  precision: 0.9002  recall: 0.9234  f1_score: 0.9117  roc_auc_score: 0.9654
+
+epoch 95:
+train  loss_sum: 10759.2063  accuracy: 0.9221  precision: 0.9015  recall: 0.9464  f1_score: 0.9234  roc_auc_score: 0.9761
+valid  loss_sum: 1932.4681  accuracy: 0.9039  precision: 0.8752  recall: 0.9429  f1_score: 0.9078  roc_auc_score: 0.9644
+test  loss_sum: 3891.0050  accuracy: 0.9088  precision: 0.8905  recall: 0.9365  f1_score: 0.9129  roc_auc_score: 0.9640
+
+epoch 96:
+train  loss_sum: 10862.8426  accuracy: 0.9210  precision: 0.8988  recall: 0.9472  f1_score: 0.9224  roc_auc_score: 0.9757
+valid  loss_sum: 2075.6737  accuracy: 0.8965  precision: 0.9145  recall: 0.8755  f1_score: 0.8946  roc_auc_score: 0.9646
+test  loss_sum: 4162.9469  accuracy: 0.8996  precision: 0.9231  recall: 0.8761  f1_score: 0.8990  roc_auc_score: 0.9657
+
+epoch 97:
+train  loss_sum: 10862.5516  accuracy: 0.9210  precision: 0.9021  recall: 0.9431  f1_score: 0.9221  roc_auc_score: 0.9758
+valid  loss_sum: 1895.8649  accuracy: 0.9085  precision: 0.8890  recall: 0.9343  f1_score: 0.9111  roc_auc_score: 0.9660
+test  loss_sum: 3882.6612  accuracy: 0.9081  precision: 0.8990  recall: 0.9237  f1_score: 0.9112  roc_auc_score: 0.9648
+
+epoch 98:
+train  loss_sum: 10586.4946  accuracy: 0.9235  precision: 0.9029  recall: 0.9477  f1_score: 0.9248  roc_auc_score: 0.9769
+valid  loss_sum: 1893.4202  accuracy: 0.9071  precision: 0.8899  recall: 0.9298  f1_score: 0.9094  roc_auc_score: 0.9663
+test  loss_sum: 3745.2944  accuracy: 0.9117  precision: 0.9028  recall: 0.9268  f1_score: 0.9147  roc_auc_score: 0.9670
+
+epoch 99:
+train  loss_sum: 10603.3759  accuracy: 0.9224  precision: 0.9017  recall: 0.9469  f1_score: 0.9238  roc_auc_score: 0.9770
+valid  loss_sum: 1927.4000  accuracy: 0.9047  precision: 0.9086  recall: 0.9006  f1_score: 0.9046  roc_auc_score: 0.9665
+test  loss_sum: 3950.8055  accuracy: 0.9041  precision: 0.9128  recall: 0.8979  f1_score: 0.9053  roc_auc_score: 0.9659
+
+final results on the test set:
+test  loss_sum: 3756.0459  accuracy: 0.9133  precision: 0.8922  recall: 0.9442  f1_score: 0.9174  roc_auc_score: 0.9658
+
+saving the model to directory: ../saved/ECFP_split_ic_tag_1024
