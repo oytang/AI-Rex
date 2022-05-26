@@ -16,7 +16,7 @@ Evaluate reactivity/reaction feasibility with quantum mechanics and/or AI techno
 - Collect or generate failure reactions to train and/or evaluate the model
 - It is encouraged to use quantum mechanics approaches.
 
-## Cleaned Git repository
+## Alternative Git repository
 
 - Without full commit history and development-relevant content
 - https://github.com/Chemino/AI.Rex
