@@ -1,5 +1,5 @@
 [![backgroud](https://img.shields.io/badge/ai4science-Chemistry-blue)](https://ai4science.io/chemistry_zh.html)
-[![branch](https://img.shields.io/badge/Branch-main-green)](https://github.com/Chemino/AI.Rex)
+[![branch](https://img.shields.io/badge/Branch-main-green)](https://github.com/Chemino/AI-Rex)
 [![branch](https://img.shields.io/badge/Branch-dev-yellow)](https://github.com/Chemino/AI-Rex/tree/dev)
 
 <a href="url"><img src="./misc/logo.png" align="left" height="170" width="130" ></a>
