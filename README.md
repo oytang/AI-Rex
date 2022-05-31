@@ -30,7 +30,27 @@ Evaluate reactivity/reaction feasibility with quantum mechanics and/or AI techno
 - Without full commit history and development-relevant content
 - https://github.com/Chemino/AI.Rex
 
-## Approaches
+## Highlights
+
+In chemical synthesis planning, retrosynthsis analysis tools can readily provide numerous synthetic paths, but that is beyond the capacity of experimental validation. Hence, evaluating the reaction feasibility accuractely and efficiently is vital in reducing the number of proposed paths and only retaining those have higher chance of success in wet lab.
+In this work, we presented several novel ideas, with the hope that they can inspire future work:
+- We designed neural network models based on Reaction SMILES sequence data or graph data, which can represent molecular structures in reactions with higher fidelity than molecular fingerprints such as ECFP;
+- We systemically generated negative samples (unfeasible reactions) in form of Reaction SMILES, by mapping correct reaction template to incorrect reaction site, or by mapping incorrect reaction template, which is the type of unfeasible reactions one can make based on a given dataset that can cause larest confusion;
+- We suggested ECFP-based train/valid/test split, which can make the prediction task even harder and can potentially enhance the generalizability of the models;
+- We estabilished an sequence-based feasibility prediction model leveraging attention mechanism (built upon [Molecular Transformer](https://github.com/pschwllr/MolecularTransformer)), reaching a high test accuracy as \~98%;
+- We developed [RRD package](https://github.com/Chemino/AI-Rex/tree/main/RRD), that can be used to calculate Reactivity-Related bond/atom-wise Descriptors with graph-based models; It can be easily integrated into any other molecular modeling pipeline in a "plug and play" manner, and can compute Quantum Mechanics descriptors on-the-fly.
+- We estabilished a graph-based convolutional feasibility prediction model (built upon [TAGCN](https://arxiv.org/pdf/1710.10370.pdf)), reaching a reasonably high test accuracy \~91%; After adding in atom/bond features computed by RRD, the test accuracy increased by \~1.0%.
+
+在化学合成路线规划中，逆合成分析工具可以很容易地提供许多合成路径，但这超出了实验验证的可行范围。因此，准确有效地评估反应的可行性对于减少建议的路径数量并只保留那些在湿式实验室中具有较高成功机会的路径至关重要。在这项工作中，我们提出了几个新的想法，希望它们能对未来的工作有所启发。
+
+- 设计了基于反应SMILES序列数据或图数据的神经网络模型，它可以比ECFP等分子指纹更保真地表示反应中的分子结构；
+- 以Reaction SMILES的形式，通过将正确的反应模板映射到不正确的反应位点，或通过映射不正确的反应模板，系统地生成负面样本（即不可行的反应），这是基于给定数据集所能做出的最具混淆性的不可行反应类型；
+- 提出了基于ECFP的训练/验证/测试数据集分割，这可以使预测任务更加困难，并可以潜在地提高模型的泛化能力；
+- 建立了一个基于序列的可行性预测模型，该模型利用了注意力机制（建立在[Molecular Transformer](https://github.com/pschwllr/MolecularTransformer)的基础上），达到了很高的测试准确率，约为98%；
+- 开发了[RRD代码包](https://github.com/Chemino/AI-Rex/tree/main/RRD)，可用于计算基于图的模型的活性相关的键/原子描述符；它可以很容易地以“即插即用”的方式集成到任何其他分子建模管道中，并可以即时计算量子力学描述符；
+- 建立了一个基于图卷积的可行性预测模型（建立在[TAGCN](https://arxiv.org/pdf/1710.10370.pdf)的基础上），达到了相当高的测试精度\~91%；在加入由RRD计算的原子/键特征后，测试精度增加了\~1.0%。
+
+## 详细方法
 
 ### 负例生成
 
